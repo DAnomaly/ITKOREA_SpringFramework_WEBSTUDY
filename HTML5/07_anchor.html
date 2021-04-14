@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>앵커</title>
+</head>   
+<body>
+    <!-- anchor : a 태그 -->
+    <!--
+        a 태그
+        1. 링크를 만드는 태그이다.
+        2. 열고 닫는 태그로 구성된다.(<a>...</a>)
+        3. href 속성
+            1) 필수 속성이다.
+            2) 연결할 대상을 지정한다. (문서 내 위치 또는 url 또는 다른 문서)
+        4. target 속성
+            1) 어떤 창으로 이동하는지 결정한다.
+            2) 새 창으로 열기 : _blank
+            3) 현재 창으로 열기 : _self, 기본값
+        5. title 속성
+            1) 풍선 도움말을 나타낸다.
+    -->
+    <h3>비어 있는 링크</h3>
+    <ul>
+        <li><a href="#">이동이 없는 링크1</a></li>
+        <li><a href="javascript:void(0)">이동이 없는 링크2</a></li> 
+    </ul>
+    
+    <h3>연결되는 링크</h3>
+    <ul>
+        <li><a href="https://www.lg.co.kr/" target="_self">L사</a></li>
+        <li><a href="https://www.samsung.com/" target="_blank">S사</a></li>
+    </ul>
+    
+    <h3>이미지 링크</h3>
+    <a href="https://www.daum.net/"><img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" alt="daumlogo" width="20%"></a>
+    
+    <p>
+        <a href="07_anchor_sub.html">오늘의 식사 메뉴</a>
+    </p>
+    
+    <h3 id="gnb">메뉴</h3>
+    <ul>
+        <li><a href="#id1">개요</a></li>
+        <li><a href="#id2">소개</a></li>
+        <li><a href="#id3">위치</a></li>
+        <li><a href="#id4">의견</a></li>
+    </ul>
+    
+    <h3 id="id1">개요</h3>
+    <p>
+        개요입니다.<br>
+        개요입니다.<br>
+        개요입니다.<br>
+        개요입니다.<br>
+        개요입니다.<br>
+        개요입니다.<br>
+        개요입니다.<br>
+        개요입니다.<br>
+        개요입니다.<br>
+        <a href="#gnb">메뉴로 이동</a>
+    </p>
+    
+    <h3 id="id2">소개</h3>
+    <p>
+        소개입니다.<br>
+        소개입니다.<br>
+        소개입니다.<br>
+        소개입니다.<br>
+        소개입니다.<br>
+        소개입니다.<br>
+        소개입니다.<br>
+        소개입니다.<br>
+        소개입니다.<br>
+        <a href="#gnb">메뉴로 이동</a>
+    </p>
+    
+    <h3 id="id3">위치</h3>
+    <p>
+        위치입니다.<br>
+        위치입니다.<br>
+        위치입니다.<br>
+        위치입니다.<br>
+        위치입니다.<br>
+        위치입니다.<br>
+        위치입니다.<br>
+        위치입니다.<br>
+        위치입니다.<br>
+        <a href="#gnb">메뉴로 이동</a>
+    </p>
+    
+    <h3 id="id4">의견</h3>
+    <p>
+        의견입니다.<br>
+        의견입니다.<br>
+        의견입니다.<br>
+        의견입니다.<br>
+        의견입니다.<br>
+        의견입니다.<br>
+        의견입니다.<br>
+        의견입니다.<br>
+        의견입니다.<br>
+        <a href="#gnb">메뉴로 이동</a>
+    </p>
+    
+    
+</body>
+</html>

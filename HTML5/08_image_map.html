@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>이미지 맵</title>
+</head>
+<body>
+    <!--이미지 맵: 이미지 일부에 링크를 설정-->
+    <!--
+        방식
+        <img usemap="#맵이름" src="이미지경로" alt="이미지설명">
+        <map name="맵이름">
+            <area shape="rect" coords="시작x,시작y,종료x,종료y" href="이동할링크주소">
+            <area shape="circle" coords="중심x,중심y,반지름" href="이동할링크주소">
+        </map>
+    -->
+    <img usemap="#event" src="images/event1.jpg">
+    <map name="event">
+        <area shape="rect" coords="356,2870,843,2986" href="https://web.dominos.co.kr/global/login?returnUrl=/event/entry/1253">
+        <area shape="circle" coords="606,328,136" href="https://web.dominos.co.kr">
+    </map>
+</body>
+</html>
