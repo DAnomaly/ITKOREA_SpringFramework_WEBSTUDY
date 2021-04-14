@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>목록 만들기</title>
+</head>
+<body>
+    <!-- 1. 순서가 없는 목록(unordered list : ul 태그) -->
+    <!-- 
+        type 속성
+        1) disc : 기본값, ● 
+        2) circle : ○
+        3) square : ■
+        → type 속성 대신 CSS로 처리하는 것이 일반적
+    -->
+    <ul type="disc"> <!-- 상위태그 -->
+        <li>메일</li>  <!-- 하위태그 -->
+        <li>카페</li>
+        <li>블로그</li>
+        <li>지식iN</li>
+        <li>쇼핑</li>
+    </ul>
+    
+    <!-- 2. 순서가 있는 목록(ordered list : ol 태그) -->
+    <ol type="1" start="3"> <!-- 상위태그 -->
+        <li>JAVA</li> <!-- 하위태그 -->
+        <li>Python</li>
+        <li>C</li>
+    </ol>
+    <ol type="A">
+        <li>Oracle</li>
+        <li>MySQL</li>
+        <li>MSSQL</li>
+    </ol>
+    <ol type="I">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+    <!-- 3. 개요 목록(description list : dl 태그) -->
+    <!--
+    <dl>
+        <dt>개념</dt>
+        <dd>개념의 설명을 작성</dd>
+    </dl>
+    -->
+    <dl>
+        <dt>이름</dt>
+        <dd>민경태</dd>
+        <dt>나이</dt>
+        <dd>44</dd>
+        <dt>자기소개</dt>
+        <dd>안녕, 난 44살 먹은 민경태라고 해. 만나서 반가워!</dd>
+    </dl>
+</body>    
+</html>
