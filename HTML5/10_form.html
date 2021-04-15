@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="txt/http; charset=utf-8">
+    <title>입력 요소</title>
+</head>
+<body>
+    <!--
+        서버로 데이터 보내기 : form 태그
+        1. form 태그 내부의 하위 요소들(input, button, select, textarea 태그)의 값(value 속성)을 서버로 모두 보낸다.
+        2. form 태그의 하위 요소들은 name 속성과 value 속성이 서버측에서 변수명과 변수에 저장된 값의 역할을 수행한다.
+        예시)
+        <input name="age" value="20"> -> 서버측 String age="20"
+        3. 서버 측으로 보내는 모든 값의 타입은 String이다.
+        4. form 태그 속성
+            1) action : 서버로 정보를 보내는 것을 submit이라고 한다. submit을 어디로 해야 하는지 경로를 작성한다.
+            2) method : 서버로 데이터를 보내는 방법 
+                (1) get 방식  
+                    - 기본값
+                    - 데이터를 헤더(header)에 포함시킨다.
+                    - 보내는 데이터가 URL에 노출된다.
+                    - 보안에 취약하다. 검색에서 주로 사용한다.
+                    - 빠르다.
+                (2) post 방식
+                    - 데이터가 바디(body)에 포함된다.
+                    - 보내는 데이터가 노출되지 않는다.
+                    - 보안이 우수하다. 로그인, 회원가입 등에서 사용한다.
+                    - 느리다.
+            3) enctype : 인코딩 방식이다.
+                (1) 파일을 보내는 경우에 사용한다.
+                (2) form 태그 내부에 파일 첨부(<input type="file">)가 포함된 경우 enctype="multipart/form-data"로 작성하고 method="post"로 한다.
+    -->
+    <!--
+        입력 태그 : input 태그
+        1. 사용자로부터 데이터를 입력 받는 태그이다.
+        2. 사용자가 입력한 데이터가 value 속성이 된다.
+        3. 입력의 형식에 따라서 type이 다르다.
+            1) type="text"      일반 데이터를 입력 받는다.(기본값)
+            2) type="password"  비밀번호를 입력 받는다.
+            3) type="button"    역할이 없는 일반 버튼이다.
+            4) type="submit"    submit하는 버튼이다.
+            5) type="reset"     reset하는 버튼이다.(입력된 값을 모두 초기화)
+            6) type="radio"     단일 선택지 ○ .. ○ ..
+            7) type="checkbow"  다중 선택지 □ .. □ ..
+            8) type="hidden"    보이지 않는다. 서버에 데이터를 보내기 위한 용도이다.
+    -->
+    <!--
+        선택 태그 : select 태그
+        버튼 태그 : button 태그, submit하는 버튼이다.
+        입력 태그 : textarea 태그, 다중 행 입력이 가능하다.
+    -->
+    
+    <h3>각종 입력 태그</h3>
+    <form action="" method="get">
+        <input type="text" placeholder="일반텍스트"/><br>
+        <input type="password" placeholder="비밀번호"/><br>
+        <input type="number" min="1" max= "100" placeholder="숫자만"/><br>
+        <input type="email" placeholder="이메일만"/><br>
+        <input type="url" placeholder="웹주소만"/><br>
+        <input type="date" placeholder="날짜"/><br>
+        <input type="time" placeholder="시간"/><br>
+    </form>
+    
+    <h3>버튼</h3>
+    <form action="//www.google.com/search">
+        검색 <input type="text" name="q"><br>
+        <input type="button" value="버튼에적히는텍스트"><br>
+        <input type="submit" value="submit"><br>
+        <button>submit</button><br>
+        <input type="reset" value="입력초기화"><br>
+    </form>
+    
+    <hr>
+    
+    <h3>선택</h3>
+    <fieldset>
+        <legend>하나만 선택하는 radio</legend>
+        <!--하나만 선택하려면 name이 같아야 한다-->
+        <input type="radio" name="gender" id="g1" value="noChecked" checked><label for="g1">선택안함</label>
+        <input type="radio" name="gender" id="g2" value="female"><label for="g2">여성</label>
+        <input type="radio" name="gender" id="g3" value="male"><label for="g3">남성</label>
+    </fieldset>
+    
+    <fieldset>
+        <legend> 선택하는 checkobx</legend>
+        <!--name이 같아야 서버측에서 동일한 항목으로 인식한다.-->
+        <form action="">
+        <input type="checkbox" name="agree" id="agr1" value="a1"><label for="agr1">1번</label>
+        <input type="checkbox" name="agree" id="agr2" value="a2"><label for="agr2">2번</label>
+        <input type="checkbox" name="agree" id="agr3" value="a3"><label for="agr3">3번</label>
+        <input type="submit" value="test_btn">
+        </form>
+    </fieldset>
+    
+    <hr>
+    
+    <h3>목록 선택</h3>
+    <dl>
+        <dt>select 하나만</dt>
+        <dd>
+            <form action="">
+            <select name="month">
+                <option value="">월</option> <!--month의 value가 빈문자열이면 선택을 안 한 것이다.-->
+                <option value="1">1월</option>
+                <option value="2">2월</option>
+                <option value="3">3월</option>
+                <option value="4">4월</option>
+                <option value="5">5월</option>
+                <option value="6">6월</option>
+                <option value="7">7월</option>
+                <option value="8">8월</option>
+                <option value="9">9월</option>
+                <option value="10">10월</option>
+                <option value="11">11월</option>
+                <option value="12">12월</option>
+            </select>
+            <input type="submit" value="test_btn"/>
+            </form>
+        </dd>
+        <dt>select 다중</dt>
+        <dd>
+            <form action="">
+            <select name="character" multiple>
+                <option value="jjanggu">짱구</option>
+                <option value="jadu">자두</option>
+                <option value="bread">브레드</option>
+                <option value="spongebob">스폰지밥</option>
+            </select>
+            <input type="submit" value="test_btn"/>
+            </form>
+        </dd>
+        <dt>datalist + input</dt>
+        <dd>
+            <form action="">
+            <input type="text" list="domain" placeholder="선택/입력" name="domain" >
+            <datalist id="domain">
+                <option value="naver.com"/>
+                <option value="kakao.com"/>
+                <option value="gmail.com"/>
+                <option value="daum.net"/>
+                <option value="gmail.com"/>
+            </datalist>
+            <input type="submit" value="test_btn"/>
+            </form>
+        </dd>
+    </dl>
+    <h3>자기소개</h3><br>
+    <textarea rows="10" cols="30" placeholder="자기소개"></textarea>
+    
+    <hr>
+    <h3>파일 첨부</h3>
+    <form action="" mehod="post" enctype="multipart/form-data">
+        <input type="file" name="filename"/> <!--서버에서 name 속성을 확인하면 파일명을 확인할 수 있다.-->
+        <button>submit</button>
+    </form>
+    
+</body>
+</html>

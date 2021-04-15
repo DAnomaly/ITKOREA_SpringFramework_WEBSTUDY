@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>연습문제7</title>
+    <style type="text/css">
+        #div1, #div2, #div3 {
+            width: 480px;
+            margin:auto;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        
+        <div id="div1">
+            <a href="//www.naver.com/" style="font-size:40px; width:100%; text-align:center;">NAVER</a><br/>
+            아이디<br/>
+            <input name="userId" type="text"><span>@naver.com</span><br/>
+            비밀번호<br/>
+            <input name="userPwd" type="text"><br/>
+            비밀번호 재확인<br/>
+            <input name="userPwd2" type="text"><br/>
+        </div>
+        <div id="div2">
+            이름<br/>
+            <input name="userName" type="text"><br/>
+            생년월일<br/>
+            <div>
+            <input name="year" type="text" placeholder="년(4자)" style="width:30%;">
+            <select name="month" style="width:30%;">
+                <option value="">월</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <input name="day" type="text" placeholder="일" style="width:30%;">
+                <br/>
+            </div>
+            성별<br/>
+            <select>
+                <option>성별</option>
+                <option>남자</option>
+                <option>여자</option>
+                <option>선택안함</option>
+            </select><br/>
+            본인 확인 이메일<span>(선택)</span><br/>
+            <input type="text" placeholder="선택입력"><br/>
+        </div>
+        <div id="div3">
+            휴대전화<br/>
+            <select>
+                <option value="..">..</option>
+                <option value="..">..</option>
+                <option value="82" selected>대한민국 +82</option>
+                <option value="..">..</option>
+                <option value="..">..</option>
+            </select><br/>
+            <input name="phone" type="text" placeholder="전화번호 입력">
+            <input name="phone_check" type="button" value="인증번호 받기"><br/>
+            <input name="phone_checkno" type="text" placeholder="인증번호 입력하세요" disabled>
+        </div>
+    </form>
+</body>
+</html>
