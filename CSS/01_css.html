@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS</title>
+<!-- 1. internal 스타일 : style 태그에 css를 작업한다. -->
+<style type="text/css"> /* type="text/css" 부분은 생략해도 된다. */
+	/* css 주석은 이것만 가능하다. */
+	/* 
+		selector(대상) {
+			속성(항목): 값;
+			속성(항목): 값;
+		}
+	 */
+	h1 {
+		color: blue;
+	}
+</style>
+<!-- 2. external 스타일 : 따로 만든 css 파일을 연결한다. -->
+<!-- 
+	link 태그 : 외부 파일을 HTML과 연결한다.
+	1. href : 연결한 파일의 경로를 지정한다.
+	2. rel : HTML과 연결할 파일의 관계(relation)를 지정한다.
+ -->
+	<link href="./css/01_css.css" rel="stylesheet">
+</head>
+<body>
+	<h1 style="color:orange">나를 이쁘게 꾸며주세요.</h1>
+</body>
+</html>

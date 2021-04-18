@@ -1,0 +1,58 @@
+선택자 (selector)
+
+1. 전체 선택자: *
+   * {
+     font-family: 'Roboto', sans-serif;
+   }
+2. 태그 선택자: 태그이름
+   div {
+     font-family: 'Roboto', sans-serif;
+   }
+3. id 속성 선택자: #id
+   #box {
+     font-family: 'Roboto', sans-serif;
+   }
+4. class 속성 선택자: .class
+   .centered {
+     font-family: 'Roboto', sans-serif;
+   }
+5. 자식 선택자: 부모 > 자식 (부모 바로 밑 자식만 선택된다.)
+   div > a {
+     text-decoration: none;
+   }
+6. 후손 선택자: 부모 후손 (부모 아래의 모든 후손이 선택된다.)
+   div a {
+     text-decoration: none;
+   }
+7. 인접 형제 선택자: 형 + 동생 (형의 첫 번째 동생만 선택된다.)
+   div + p {
+     text-align: center;
+   }
+8. 일반 형제 선택자: 형 ~ 동생 (형의 모든 동생들이 선택된다.)
+   div ~ p {
+     text-align: center;
+   }
+9. 속성 선택자
+   1) E[attribute]           attribute 속성이 포함된 모든 E(요소)
+   2) E[attribute="value"]   attribute 속성이 value인 E
+   3) E[attribute^="value"]  attribute 속성이 value로 시작하는 E
+   4) E[attribute$="value"]  attribute 속성이 value로 끝나는 E
+   5) E[attribute*="value"]  attribute 속성이 value로 포함하는 E
+10. 링크 선택자
+   1) E:link     방문한 적이 있는 링크 E(요소)
+   2) E:visited  방문한 적이 있는 링크 E
+11. 반응 선택자
+   1) E:active   키보드 엔터 누름/마우스 클릭 할 때 E(요소)
+   2) E:hover    마우스를 가져다 댄 E
+12. 상태 선택자
+   1) E:focus    focus를 가진(선택한) E(요소)
+   2) E:checked  checked 상태인 E
+   3) E:enabled  enabled 상태인 E
+   4) E:disabled disabled 상태인 E
+13. 구조 선택자
+   1) E:first-child     첫 번째 E(요소)
+   2) E:last-child      마지막 E
+   3) E:nth-child(n)    n 번째(수열) E
+   4) E:first-of-type   첫 번째 타입 E(요소)
+   5) E:last-of-type    마지막 타입 E
+   6) E:nth-of-type(n)  n번째(수열) 타입 E

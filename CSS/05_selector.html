@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자</title>
+<style type="text/css">
+	/* 1. 부모 > 자식 : 상위요소 > 하위요소 */
+	table > tbody {
+		background-color: beige;
+	}
+	/* 2. 부모 후손 : 상위요소 하위요소 */
+	table td {
+		color: chocolate;
+	}
+	/* 3. 형제 ~ 형제 : 일반 형제(모든 형제를 의미한다.) */
+	p ~ h1 {
+		color: chocolate;
+	}
+	/* 4. 형제 + 형제 : 인접 형제(붙어있는 형제만 의미한다. 형제를 의미한다.) */
+    p + h1 {
+        color: green;
+    }
+    /* 5. 링크 반응 */
+    h3 > a {  /* 부모 > 자식 */
+        color: black;  /* #000, #000000 */
+        text-decoration: none;
+    }
+    h3 > a:link {  /* link : 방문 전 */
+        color: cyan;
+    }
+    h3 > a:visited {  /* visited : 방문 후 */
+        color: gray;  /* grey */
+    }
+	/* 6. 속성 */
+	input[type="radio"] {
+		font-size: 20px;
+	}
+	input[type="radio"]:hover + label{
+		font-weight: bolder;
+	}
+	input[checked] + label { /* checked 속성을 가지고 있는 input 태그의 바로 뒤 label 태그 */
+		color: red;
+	}
+	input[type="radio"]:checked + label { /* checked 속성을 가지고 있는 input 태그의 바로 뒤 label 태그 */
+		color: limegreen;
+	}
+	/* 7. 구조 */
+	ul > li:nth-of-type(1) { /* first-of-type */
+		font-weight: 900;
+	}
+	ul > li:nth-of-type(4n+1) {
+		color: red;	
+	}
+	
+	
+</style>
+</head>
+<body>
+	<!-- 1. 부모, 자식, 후손 살펴보기 -->
+	<table border="1">
+		<tbody>
+			<tr>
+				<td>번호</td>
+				<td>이름</td>
+				<td>연락처</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>브레드</td>
+				<td>010-1818-1818</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>초코</td>
+				<td>010-2929-2929</td>
+			</tr>	
+		</tbody>
+	</table>
+
+    <!-- 2. 형제 살펴보기(형제: 같은 수준의 요소) -->
+    <p>형제 살펴보기</p>
+    <h1>첫째</h1>
+    <h1>둘째</h1>
+    <h1>셋째</h1>
+    
+    <!-- 3. 링크 반응 살펴보기 -->
+    <h3><a href="https://www.naver.com">네이버</a></h3>
+    <h3><a href="https://www.kakao.com">카카오</a></h3>
+    <h3><a href="https://www.google.com">구글</a></h3>
+    
+    <!-- 4. 속성 -->
+    <form>
+        <input id="yes" type="radio" name="agreement" value="yes">
+        <label for="yes">동의합니다</label>
+        <input id="no" type="radio" name="agreement" value="no" checked>
+        <label for="no">동의하지 않습니다</label><br>
+        <button>전송하기</button>
+        <input type="button" value="취소하기">
+    </form>
+    
+    <!-- 5. 구조 -->
+    <ul>
+        <li>Java</li>
+        <li>Oracle</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>JQuery</li>
+        <li>JSP/Servlet</li>
+        <li>Spring</li>
+        <li>Portfolio</li>
+    </ul>
+    
+
+</body>
+</html>

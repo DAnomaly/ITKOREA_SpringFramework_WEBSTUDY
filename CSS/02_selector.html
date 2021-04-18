@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자</title>
+<style type="text/css">
+	/* 1. 전체 선택자 */
+	* {
+		color: aqua;
+	}
+	
+	/* 2. 태그 선택자 */
+	h1 {
+		color: bisque;
+	}
+	
+	/* 3. 그룹 선택자 */
+	h1, h2, h3, h4, h5 {
+		color: blue;
+	}
+	
+	/* 4. 클래스 선택자 */
+	.red-style{
+		color:brown;
+	}
+	.mark-style{
+		background:silver;
+	}
+	
+	/* 5. 아이디 선택자 */
+	#big-title{
+		color: coral;
+	}
+	#red{
+		color: red;
+	}
+	#blue {
+		color: blue;
+	}
+
+	
+</style>
+</head>
+<body>
+
+	<!-- 문서내에서 id는 중복되지 않는다. -->
+	<h1 id="big-title">날아라 슈퍼보드!</h1>
+	<h2>날아라 슈퍼보드!</h2>
+	<h3>날아라 슈퍼보드!</h3>
+	<h4>날아라 슈퍼보드!</h4>
+	<h5>날아라 슈퍼보드!</h5>
+	
+	<!-- 2개 이상의 클래스를 지정할떄는 공백으로 구분한다. -->
+	<p class="red-style mark-style">지기지기자가자가조고조고조!</p>
+	<p class="red-style">지기지기자가자가조고조고조!</p>
+	<p>지기지기자가자가조고조고조!</p>
+	
+	<p><span id="red">나쁜 짓</span>을 하면은 우리에게 들키지!</p>
+	<p>나쁜 짓을 하면은 <span id="blue">우리에게</span> 들키지!</p>
+	
+</body>
+</html>

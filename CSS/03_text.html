@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>텍스트</title>
+<!-- 1) 웹 폰트를 위한 링크 link -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<style>
+	/* 2) 웹 폰트를 위한 @import */
+	@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+	
+	p {
+		
+		/* 1. 정렬 : left, right, center, justify */
+		/* 주의사항 : 인라인 요소는 정렬되지 않는다. */
+		text-align:left;
+		
+		/* 2. 행 높이 */
+		line-height: 50px;
+		
+		/* 3. 들여쓰기 */
+		text-indent: 50px;
+		
+		/* 4. 밑줄(underline), 윗줄(overline), 취소선(line-through) */	
+		text-decoration: underline;
+		
+		/* 5. 그림자 */
+		/* text-shadow: 가로방향 세로방향 번짐 색상 */
+		text-shadow: 5px 5px 1px silver, 3px 3px 1px yellow;
+	}
+	
+	/* 인라인 요소는 블록 레벨에 적용되는 css 속성을 처리하지 못한다. */
+	span {
+		text-align: center;
+	}
+	
+	/* a 태그는 디폴트를 없애준다. */
+	a {
+		color: black;
+		text-decoration: none;
+	}
+	
+</style>
+
+
+</head>
+<body>
+    
+    <!-- p 태그는 "블록 레벨" -->
+    <p>지기지기자가자가조고조고조 지기지기자가자가조고조고조 나쁜 짓을 하면은 지기지기자가자가조고조고조 지기지기자가자가조고조고조 우리에게 들키지! 낮에도 밤에도 느낄 수 있는 눈과 귀가 있다네 우리의 손오공!</p>
+    
+    <!-- span 태그는 "인라인 요소" -->
+    <span>사랑하며 살면은 평화가 올거야~!</span>
+    
+    <br>
+    
+    <a href="https://www.naver.com">네이버로 가자!</a>
+    
+    <br>
+    
+    <pre>날아라 슈퍼보드!</pre>
+    
+
+</body>
+</html>
