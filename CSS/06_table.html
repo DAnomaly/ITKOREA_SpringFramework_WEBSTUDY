@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>테이블</title>
+    <style>
+        /*
+            1. 너비는 width, 높이는 height 속성을 이용한다.
+            2. table 태그와 td 태그에 width, height 속성을 준다.
+            3. 테두리는 border 속성(단축 속성: 여러 속성을 한 번에 준다.)
+            4. table 태그와 td 테그에 border 속성을 준다.
+            5. 가로 정렬은 text-align 속성, 세로 정렬(테이블 전용) vertical-align 속성을 이용한다.
+        */
+        table {
+            width: 400px;
+            height: 300px;
+        }
+        
+        table, td {
+            /*
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+            */
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        caption {
+            color:coral;
+        }
+        thead td {
+            text-align: center;
+            height: 50px;
+        }
+        tbody {
+            vertical-align: top; /*top, middle, bottom */
+        }
+        td:nth-of-type(1) {
+            width: 100px;
+        }
+        td:nth-of-type(2) {
+            width: 100px;
+        }
+        td:nth-of-type(3) {
+            width: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <caption>신청 명단</caption>
+        <thead>
+            <tr>
+                <td>이름</td>
+                <td>소속</td>
+                <td>신청일</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>가길동</td>
+                <td>개발부</td>
+                <td>2021-04-08</td>
+            </tr>
+            <tr>
+                <td>나길동</td>
+                <td>유지보수부</td>
+                <td>2021-04-09</td>
+            </tr>
+            <tr>
+                <td>다길동</td>
+                <td>고객지원부</td>
+                <td>2021-04-10</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

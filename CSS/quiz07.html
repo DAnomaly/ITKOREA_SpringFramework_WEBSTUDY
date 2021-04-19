@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>quiz07</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+      * {
+        margin: 0;
+      }
+      #list {
+        width:1130px;
+        margin:auto;
+      }
+      #border {
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        box-shadow: 1px 1px silver;
+      }
+      
+      #list ul{
+        display: flex;
+        list-style-type: none;
+        padding-left: 0;
+        width: 1130px;
+      }
+      
+      #list li {
+        width: 70px;
+        height: 45px;
+        text-align:center;
+        line-height: 45px;
+      }
+      
+      a {
+        text-decoration: none;
+      }
+      #list a {
+        color:limegreen;
+      }
+      
+      /* list2 */
+      #list2 {
+        margin-top: 30px;
+      }
+      #list2 ul{
+        display: flex;
+        list-style-type: none;
+        max-width: 1130px;
+        min-width: 720px;
+        height: 45px;
+        margin: auto;
+        justify-content: center;
+        border-top: 1px solid gray;
+        border-bottom: 2px solid gray;
+      }
+      
+      #list2 a{
+        text-align: center;
+        line-height: 45px;
+        margin-right: 40px;
+      }
+      #list2 a:last-of-type {
+        margin-right: 0;
+      }
+      #list2 a {
+        color: black;
+      }
+      #list2 ul a:hover li {
+        color: red;
+      }
+      #list2 ul a:hover {
+        border-bottom: 2px solid red;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="border">
+      <div id="list">
+        <ul>
+          <li><a href="https://mail.naver.com/"><i class="fas fa-envelope-open-text"></i>메일</a></li>
+          <li><a href="https://section.cafe.naver.com/">카페</a></li>
+          <li><a href="https://section.blog.naver.com/BlogHome.nhn?directoryNo=0&currentPage=1&groupId=0">블로그</a></li>
+          <li><a>지식iN</a></li>
+          <li><a>쇼핑</a></li>
+          <li><a>Pay</a></li>
+          <li><a>TV</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="border2">
+      <div id="list2">
+        <ul>
+          <a href="#"><li><strong>증권 홈</strong></li></a>
+          <a href="#"><li><strong>시장정보</strong></li></a>
+          <a href="#"><li><strong>이슈</strong></li></a>
+          <a href="#"><li><strong>종목게시판</strong></li></a>
+          <a href="#"><li><strong>뉴스</strong></li></a>
+          <a href="#"><li><strong>MY종목보드</strong></li></a>
+        </ul>
+      </div>
+      
+    </div>
+    
+  </body>
+</html>

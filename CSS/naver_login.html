@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>로그인</title>
+    <style>
+      * {
+        margin:0;
+      }
+      #background{
+        width:100vw;
+        height:100vh;
+        background-color: #e0e0e0;
+      }
+      #login_d1 {
+        width: 500px;
+        margin: 0 auto;
+      }
+      #input {
+        
+      }
+      #logo {
+        text-align: center;
+        font-size: 50px;
+        color: limegreen;
+        margin: 20px 0;
+      }
+      #id_d , #pwd_d{
+        background-color: white;
+        width: 460px;
+        height: 40px;
+        margin: 10px auto;
+        
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="background">
+      <div id="login_d1">
+        <h1 id="logo">NAVER</h1>
+        <form id="login_f">
+          <div id="id_d">
+            <input type="text" name="id"><br>
+          </div>
+          <div id="pwd_d">
+            <input type="password" name="pwd"><br>
+          </div>
+          <input type="submit"><br>
+          <input type="checkbox" name="keep">로그인 상태 유지<br>
+          <hr/>
+        </form>
+      </div><!--id='login_d1'-->
+    </div>
+  </body>
+</html>
