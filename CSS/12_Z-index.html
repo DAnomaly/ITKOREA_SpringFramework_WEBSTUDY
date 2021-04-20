@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>z-index</title>
+    <style>
+      /*
+        앞 뒤 순서 조정 속성 : z-index
+        1. 정수값을 가진다
+        2. 상대적으로 높은 값이 앞으로 나오고, 낮은 값이 뒤로 간다.
+        3. position이 relative, absolute, fixed인 경우에 적용된다.
+        4. 같은 depth를 가진 요소끼리 비교한다.
+          (부모-자식은 비교가 안 되고, 형제끼리 비교가 된다.)
+       */
+      .wrap {
+        width: 400px;
+        height: 400px;
+        background-color: azure;
+        position:relative;
+        z-index: 4; /*부모-자식은 비교가 안된다(무시됨)*/
+      }
+      
+      #box1 {
+        position:absolute;
+        width: 200px;
+        height: 200px;
+        top : 10px;
+        left : 10px;
+        background-color: blue;
+        z-index: 2; /* 높은 값을 가지므로 앞으로 표시된다*/
+      }
+      #box2 {
+        position:absolute;
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        left: 100px;
+        top: 100px;
+        z-index: 1; /* 낮은 값을 가지므로 뒤로 표시된다 */
+      }
+    
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div id="box1"></div>
+      <div id="box2"></div>
+    </div>
+  </body>
+</html>

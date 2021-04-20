@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>quiz09</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+      .gnb {
+        max-width: 1280px;
+        min-width: 620px;
+        height: 36px;
+        border-bottom: 1px solid silver;
+        position: relative;
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+      
+      .gnb a {
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        height: 26px;
+        padding: 5px 10px;
+        margin-right:3px;
+        margin-left:3px;
+        color: black;
+      }
+      
+      .gnb a:first-of-type {
+        margin-left: 60px;
+      }
+      
+      .gnb a:hover {
+        border-bottom: 2px solid blue;
+        color: blue;
+      }
+      .gnb > .bar {
+        float: right;
+        height: 36px;
+        line-height: 36px;
+        width: 36px;
+        text-align: center;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gnb">
+      <a href="javascript:void(0)">Models</a>
+      <a href="javascript:void(0)">Find</a>
+      <a href="javascript:void(0)">Services</a>
+      <a href="javascript:void(0)">Buy</a>
+      <a href="javascript:void(0)">Magazine</a>
+      <div onclick="javascript:void(0)" class="bar"><i class="fas fa-bars"></i></div>
+    </div>
+  </body>
+</html>

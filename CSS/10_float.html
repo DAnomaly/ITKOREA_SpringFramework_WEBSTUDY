@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>float</title>
+    <style>
+      /*div wrap*/
+      .wrap {
+        width: 640px;
+        height: 320px;
+        border: 1px solid black;
+        padding: 10px;
+      }
+      img {
+        width: 150px;
+        height:100px;
+        border-radius: 15px;
+        /*플롯은 "떠다닌다"는 의미*/
+        /*img가 해당 흐름에서 벗어나서 왼쪽/오른쪽에 배치된다.*/
+        float: left;
+      }
+      
+      /*div wrap2*/
+      div.wrap2{
+        width: 340px;
+        height: 340px;
+        border: 1px solid black;
+        margin-top: 10px;
+        padding:10px;
+      }
+      div.wrap2 > div{
+        width: 150px;
+        height: 150px;
+        font-size: 45px;
+        color: cornflowerblue;
+        text-align: center;
+        line-height: 150px;
+        float:left;
+        background-color: azure;
+        margin: 10px;
+      }
+      
+      /*div wrap3*/
+      div.wrap3 {
+        border: 1px solid black;
+        width: 260px;
+        height: 300px;
+        margin: 10px;
+        
+      }
+      div.wrap3 > .left-box {
+        width: 100px;
+        height: 100px;
+        border : 1px solid black;
+        float: left;
+        margin: 10px;
+      }
+      div.wrap3 > .foot-box {
+        /* float 속성에서 벗어나는 속성: clear */
+        clear: left; /*right, left, both*/
+        width: 225px;
+        height: 50px;
+        border: 1px solid black;
+        margin: 10px;
+        
+      
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <img alt="개구리" src="images/frog.jpg">
+      <img alt="고슴" src="images/hedgehog.jpg">
+      <img alt="수리" src="images/eagle.jpg">
+      <img alt="고양이" src="images/cat.jpg">
+      <img alt="라이언" src="images/lion.jpg">
+      기본적인 문서의 흐름은 왼쪽→오른쪽, 위→아래이다.
+      포지션을 수정하면 화면에 콘텐츠를 어디에 배치할것인지 조정할 수 있다.
+      포지션을 조정하는 방법은 float 속성을 이용하거나 position 속성을 이용하는 방법이 있다.
+      이 중에서 float 속성을 사용하면 기본적인 문서의 흐름에서 벗어나서 float 속성이 사용된 요소의 부모 요소의 왼쪽이나 오른쪽에 배치된다.
+    </div>
+    
+    <div class="wrap2">
+      <div>봄</div>
+      <div>여름</div>
+      <div>가을</div>
+      <div>겨울</div>
+    </div>
+    
+    <div class="wrap3">
+      <div class="left-box"></div>
+      <div class="left-box"></div>
+      <div class="foot-box"></div>
+    </div>
+  </body>
+</html>

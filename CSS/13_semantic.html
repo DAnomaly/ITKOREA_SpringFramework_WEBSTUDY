@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>semantic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+      *{
+        margin:0;
+        padding:0;
+      }
+      /*
+        의미 있는 태그: semantic 태그
+        1. 레이아웃을 의미 있게 표준화 한 태그이다.
+        2. 소스코드를 분리해서 작성할 수 있다. (가독성 및 분석이 쉬워진다.)
+        3. 최신 HTML5 표준이다. 
+          (모든 브라우저의 지원이 안될 수 있다. 호환성 체크를 통해 지원이 안될 수 있다.)
+        4. section 태그와 article 태그는 자유롭게 수준(depth)을 사용해도 된다.
+       */
+    
+      header > nav {
+        overflow: hidden;
+        height: 500px;
+        width: 1400px;
+        margin: 0 auto;
+        background-image: url(images/blackboard.jpg);
+        background-size: cover;
+      }
+      header > nav > ul {
+        float:left;
+        list-style-type : none;
+        padding: 0;
+        margin: 0 40px;
+        width: 1000px;
+        height:  100px;
+        /* 메뉴의 가로 배치를 위해서 각 메뉴 부모 요소에 overflow:hidden; */
+        overflow: hidden;
+        border-bottom: 1px solid white;
+      }
+      header > nav > ul > li {
+        color:white;
+        padding: 0 20px;
+        height: 100%;
+        line-height: 100px;
+        /* 메뉴들은 가로 배치를 위해서 float: left; */
+        float: left;
+      }
+      header > nav > .search {
+        color: white;
+        float: left;
+        width: 300px;
+        height: 100px;
+        line-height: 100px;
+        text-align: right;
+        border-bottom: 1px solid white;
+      }
+      
+      /* --------- */
+      section {
+        width: 1400px;
+        height: 250px;
+        margin: 10px auto;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+      section > article {
+        width: 48%;
+        height: 100%;
+        text-align: center;
+        padding-top: 50px;
+        color:white;
+        font-size: 25px;
+      }
+      section > article:nth-of-type(1) {
+        float: left;
+        background-image: url(images/cat.jpg);
+        background-size: cover;
+      }
+      section > article:nth-of-type(2) {
+        float: right;
+        background-image: url(images/dog.jpg);
+        background-size: cover;
+      }
+      
+      /* --------- */
+      aside {
+        width: 1400px;
+        margin: 10px auto;
+      }
+      aside > div {
+        width: 220px;
+        background-color: #ebebeb;
+        float: right;
+        margin: 0px 10px;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+      
+      aside > div > p {
+        text-align: center;
+      }
+      
+      /* --------- */
+      footer {
+        position: fixed;
+        width:100vw;
+        bottom:0;
+        height: 55px;
+        text-align: center;
+        border-top: 1px solid silver;
+        background-color:white;
+      }
+      footer > p {
+        display: inline-block;
+        width: 200px;
+        height: 40px;
+        padding: 15px;
+        margin: 0 auto;
+        color: #606060;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 전체 화면 -->
+    <div class="container">
+      <!-- 페이지 상단 -->
+      <header>
+        <!-- 네비게이션 -->
+        <nav>
+          <ul>
+            <li>Models</li>
+            <li>Find &amp; Buy</li>
+            <li>Electromobility</li>
+            <li>Services</li>
+            <li>Magazine</li>
+          </ul>
+          <div class="search">
+            검색 <input type="text" name="quary">
+            <button><i class="fas fa-search"></i></button>
+          </div>
+        </nav>
+      </header>
+      <!-- 본문 -->
+      <section>
+        <!-- 세부구역 -->
+        <article>
+          <h3>THE 5</h3>
+          <p> BMW 5 series</p>
+        </article>
+        <article>
+          <h3>THE 7</h3>
+          <p> BMW 7 series</p>
+        </article>
+      </section>
+      <!-- 사이드 메뉴 -->
+      <aside>
+        <div>
+          <i class="fas fa-map-marker"></i>
+          <p>딜러위치</p>
+        </div>
+        <div>
+          <i class="fas fa-file"></i>
+          <p>가격표</p>
+        </div>
+      </aside>
+      
+      <!--페이지 하단-->
+      <footer>
+        <p>시승신청</p>
+        <p>카탈로그 다운로드</p>
+      </footer>
+      
+    </div>
+  </body>
+</html>

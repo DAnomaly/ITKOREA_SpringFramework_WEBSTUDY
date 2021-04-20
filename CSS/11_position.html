@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>position</title>
+    <style>
+      /*
+        컨텐츠 배치 속성 : position
+        1. static 
+          1) 기본값이다.
+          2) 문서 흐름대로 배치한다.
+          3) 옵셋(떨어진 위치:top, bottom, left, right)이 동작하지 않는다.
+        2. relative
+          1) 문서 흐름대로 배치한다.
+          2) 옵셋(떨어진 위치:top, bottom, left, right)이 동작한다.
+        3. absolute
+          1) 문서 흐름을 깨고, 배치 하고 싶은 곳에 배치한다.
+          2) 부모 요소 내부에서 배치되는데 부모 요소는 position이 static이면 안 된다.
+            (주로 부모는 relative인 경우가 많다)
+          3) 옵셋(떨어진 위치:top, bottom, left, right)이 동작한다.
+        4. fixed
+          1) 문서 흐름을 깨고, 배치 하고 싶은 곳에 배치한다.
+          2) 영역을 차지하지 않는다.
+          3) 항상 고정되어 있다.
+        5. sticky
+          1) 문서 흐름대로 배치한다.
+          2) 스크롤 따라서 이동한다.
+       */
+      div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+      }
+      #box1 {
+        top: 100px; /*부모 요소 기준 top에서 100px만큼 떨어진다*/
+        /*동작하지 않는 이유는 box1은 position:static이기 때문이다*/
+      }
+      #box2 {
+        position: relative;
+        top : 100px; /* 원래 자신이 배치되는 곳 기준으로 top에서 100px만큼 이동한다 */
+      }
+      
+      /*div wrap*/
+      .wrap {
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        position: relative; /*부모 요소의 position이 relative/absolute이면 자식 요소들은 position:absolute를 사용할 수 있다*/
+      }
+      .wrap > div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        position: absolute;
+      }
+      #box3 {
+        top : 10px;
+        left : 10px;
+      }
+      #box4 {
+        top : 10px;
+        right : 10px;
+      }
+      #box5 {
+        bottom : 10px;
+        left : 10px;
+      }
+      #box6 {
+        bottom : 10px;
+        right : 10px;
+      }
+      /* side */
+      .side {
+        width : 100px;
+        height : 300px;
+        border : 1px solid black;
+        /*부라우저 화면 기준으로 고정시킨다*/
+        position : fixed;
+        top : 300px;
+        right : 100px;
+      }
+      .side > img {
+        width : 50px;
+        height : 50px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    
+    <br><br>
+    
+    <div class="wrap">
+      <div id="box3">봄</div>
+      <div id="box4">여름</div>
+      <div id="box5">가을</div>
+      <div id="box6">겨울</div>
+    </div>
+    
+    <!-- position: fixed -->
+    <div class="side">
+      <img alt="vase.jpg" src="images/vase.jpg"><br><br>
+      <img alt="wall.jpg" src="images/wall.jpg"><br><br>
+      <img alt="frog.jpg" src="images/frog.jpg">
+    </div>
+    
+  </body>
+</html>
