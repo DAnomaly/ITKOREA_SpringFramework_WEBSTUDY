@@ -5,14 +5,15 @@ section {
   margin: 0 auto;
 }
 /*ID PWD LOGIN*/
-section > form > div {
+section > form > label {
+  display: block;
   margin: 6px 0;
   background-color: white;
   border: 1px solid #dbdbdb;
   width: 460px;
   box-sizing: border-box;
 }
-section > form > div > input {
+section > form > label > input {
   outline:none;
   margin : 13px auto 13px 10px;
   font-size: 16px;
@@ -20,14 +21,16 @@ section > form > div > input {
   width: 300px;
   background:none;
 }
-section > form > div:nth-of-type(3) {
+section > form > label > input:focus {
+  border: 1px solid limegreen;
+}
+section > form > label:nth-of-type(3) {
   margin-top: 10px;
   height: auto;
   width: auto;
   border: 0;
-
 }
-section > form > div:nth-of-type(3) > input {
+section > form > label:nth-of-type(3) > input {
   display: block;
   margin: 6px 0;
   background-color: white;

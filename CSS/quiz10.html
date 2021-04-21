@@ -21,15 +21,19 @@
       <section>
         <!--ID,PWD,LOGIN,..-->
         <form>
-          <div><input id="id" name="id" type="text" placeholder="아이디"></div>
-          <div><input id="name" name="pwd" type="password" placeholder="비밀번호"></div>
-          <div><input type="submit" value="로그인"></div>
+          <label for="id">
+            <input id="id" name="id" type="text" placeholder="아이디">
+          </label>
+          <label for="pwd">
+            <input id="pwd" name="pwd" type="password" placeholder="비밀번호">
+          </label>
+          <label for="login_btn"><input id="login_btn" type="submit" value="로그인"></label>
           <!--로그인상태유지,IP보안-->
           <article id="login_ip">
             <div> 
               <input id="login_chk" name="login_chk" type="checkbox">
               <label for="login_chk">
-                <span><i class="far fa-check-circle"></i></span>
+                <span><i class="far fa-check-circle fa-lg" ></i></span>
                 <span>로그인 상태 유지</span>
               </label>
             </div>
