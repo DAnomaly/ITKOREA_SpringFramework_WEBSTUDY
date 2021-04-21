@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+/*footer*/
+/*이용약관,개인정보처리방침,책임의 한계와 법적고지,회원정보 고객센터*/
+footer {
+  margin-top: 100px;
+  padding: 30px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+footer a {
+  color: #6c6c6c;
+  text-decoration: none;
+}
+footer ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+footer ul li {
+  padding: 0 4px;
+  border-right: 1px solid #dbdbdb;
+}
+footer ul li:last-of-type {
+  border-right: 0;
+}
+/*© NAVER Corp.*/
+footer p a:first-of-type {
+  font-family: 'Black Han Sans', sans-serif;
+  color:limegreen;
+}

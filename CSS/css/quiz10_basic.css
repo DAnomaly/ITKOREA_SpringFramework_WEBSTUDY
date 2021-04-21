@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+/* BACKGROUND & ALL TAG */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: rgb(245,246,247);
+}

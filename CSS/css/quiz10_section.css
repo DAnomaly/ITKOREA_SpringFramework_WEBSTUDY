@@ -1,0 +1,110 @@
+@charset "UTF-8";
+/*SECTION*/
+section {
+  width:460px;
+  margin: 0 auto;
+}
+/*ID PWD LOGIN*/
+section > form > div {
+  margin: 6px 0;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  width: 460px;
+  box-sizing: border-box;
+}
+section > form > div > input {
+  outline:none;
+  margin : 13px auto 13px 10px;
+  font-size: 16px;
+  border: 0;
+  width: 300px;
+  background:none;
+}
+section > form > div:nth-of-type(3) {
+  margin-top: 10px;
+  height: auto;
+  width: auto;
+  border: 0;
+
+}
+section > form > div:nth-of-type(3) > input {
+  display: block;
+  margin: 6px 0;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  width: 460px;
+  height: 48px;
+  box-sizing: border-box;
+  background-color: limegreen;
+  height: 58px;
+  color:white;
+}
+/*로그인상태유지,IP보안*/
+#login_ip {
+  margin: 6px 0;
+  width: 460px;
+  height: 30px;
+  border-bottom: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  margin-top:12px;
+}
+#login_ip input {
+  position: absolute;
+  display: none;
+}
+#login_ip > div:first-of-type {
+  float: left;
+}
+#login_ip > div:last-of-type {
+  float: right;
+}
+#login_ip > div:first-of-type > label span:first-of-type{
+  color: gray;
+}
+#login_ip > div:first-of-type > input:checked + label span:first-of-type{
+  color: limegreen;
+}
+#login_ip > div:last-of-type > label span:last-of-type{
+  color: gray;
+}
+#login_ip > div:last-of-type > input:checked + label span:last-of-type{
+  color: limegreen;
+}
+/*더욱 간편한 로그인*/
+#simple_login p {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+#simple_login button {
+  width: 226px;
+  height: 56px;
+  box-sizing: border-box;
+  border: 1px solid limegreen;
+  background-color: white;
+  outline:none;
+  font-size: 18px;
+}
+/*아이디찾기,비밀번호찾기,회원가입*/
+#find {
+  margin: 15px;
+  text-align: center;
+}
+#find a {
+  display: inline-block;
+  height: 10px;
+  line-height: 10px;
+  padding: 3px;
+  border-right: 1px solid #dbdbdb;
+  color: #6c6c6c;
+  text-decoration: none;
+  font-size: 14px;
+}
+#find a:last-of-type {
+  border-right: 0;
+}
+/*배너*/
+#banner{
+  margin-top: 40px;
+}

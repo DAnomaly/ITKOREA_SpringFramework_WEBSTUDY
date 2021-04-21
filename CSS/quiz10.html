@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>네이버 : 로그인</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="css/quiz10_basic.css" rel="stylesheet" type="text/css">
+    <link href="css/quiz10_header.css" rel="stylesheet" type="text/css">
+    <link href="css/quiz10_section.css" rel="stylesheet" type="text/css">
+    <link href="css/quiz10_footer.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <!--ALL CONTAINER-->
+    <div class="container">
+      <!--HEADER-->
+      <header>
+        <!--LOGO:NAVER-->
+        <h1 id="logo">NAVER</h1>
+      </header>
+      <!--SECTION-->
+      <section>
+        <!--ID,PWD,LOGIN,..-->
+        <form>
+          <div><input id="id" name="id" type="text" placeholder="아이디"></div>
+          <div><input id="name" name="pwd" type="password" placeholder="비밀번호"></div>
+          <div><input type="submit" value="로그인"></div>
+          <!--로그인상태유지,IP보안-->
+          <article id="login_ip">
+            <div> 
+              <input id="login_chk" name="login_chk" type="checkbox">
+              <label for="login_chk">
+                <span><i class="far fa-check-circle"></i></span>
+                <span>로그인 상태 유지</span>
+              </label>
+            </div>
+            <div>    
+              <input id="ip_on" name="ip_on" type="checkbox" value="on" checked>
+              <label for="ip_on">
+                <span>IP보안</span>
+                <span><strong>ON</strong></span>
+              </label>
+            </div>
+          </article>
+        </form>
+        <!--더욱간편한로그인-->
+        <article id="simple_login">
+          <p>더욱 간편한 로그인</p>
+          <!--QR코드 로그인-->
+          <button>
+            <div>QR코드 로그인</div>
+          </button>
+          <!--일회용 번호 로그인-->
+          <button>
+            <div>일회용 번호 로그인</div>
+          </button>
+        </article>
+        <!--아이디찾기,비밀번호찾기,회원가입-->
+        <div id="find">
+          <a href="javascript:void(0);"> 아이디 찾기 </a><a href="javascript:void(0);"> 비밀번호 찾기 </a><a href="javascript:void(0);"> 회원가입 </a>
+        </div>
+        <!--배너-->
+        <div id="banner">
+          <img alt="banner" src="images/naver_login_banner.jpg">
+        </div>
+      </section>
+      <footer>
+        <!--이용약관,개인정보처리방침,책임의 한계와 법적고지,회원정보 고객센터-->
+        <ul>
+          <li><a href="javascript:void(0);">이용약관</a></li>
+          <li><a href="javascript:void(0);"><strong>개인정보처리방침</strong></a></li>
+          <li><a href="javascript:void(0);">책임의 한계와 법적고지</a></li>
+          <li><a href="javascript:void(0);">회원정보 고객센터</a></li>
+        </ul>
+        <!--© NAVER Corp.-->
+        <p><a><strong>NAVER</strong></a> Copyright &copy;<a>NAVER Corp.</a> All Rights Reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
