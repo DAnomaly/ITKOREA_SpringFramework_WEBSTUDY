@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- width: 화면 너비 설정을 장치 기준으로 한다. -->
+    <!-- initial-scle: 기본 크기는 화면의 100%이다-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹</title>
+    <style>
+      /*
+        반응형 웹
+        1. 웹 문서를 열어 보는 기기에 따라서 페이지 구성(레이아웃)이 즉각 반응(변경)하는 기능을 의미한다.
+        2. 기기에 표시되는 화면의 크기에 따라서 페이지 구성이 달라진다.
+        3. 뷰포트(viewport)
+          1) 기기에 표시되는 화면의 크기이다.
+          2) 반응형 웹을 제작하기 위해서 뷰포트 설정이 필요하다. (meta name="viewport")
+        4. 미디어쿼리(mediaquery)
+          1) 화면의 크기 변화를 감지하는 CSS모듈이다.
+          2) 선언 : @media
+          3) 종류 : all(모든 미디어), print(출력물), speech(웹 낭독기), screen(화면)
+          4) 조건 : 거의 너비(width)
+            (1) width: 640px;     딱 640px일 때.
+            (2) min-width: 640px; 최소 640px 이상.
+            (3) max-width: 640px; 최대 640px 이하.
+            (4) orientation: landscape(가로가 넓은 화면), portrait(가로가 좁은 화면);
+       */
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        color: balck;
+        text-decoration: none;
+      }
+      body {
+        background-color: lightyellow;
+      }
+      /* 미디어쿼리 */
+      @media screen and (min-width: 640px) { /* 너비가 640px 이상이면 */
+        body{
+          background-color: pink;  
+        }
+      }
+      
+      #box1 {
+        width: 200px;
+        height: 200px;
+        background-color: black;
+      }
+      @media screen and (orientation: landscape) { /*너비가 높이보다 클 때*/
+        #box1 {
+          background-color: magenta;
+        }
+      }
+      @media screen and (orientation: portrait) { /*너비가 높이보다 작을 때*/
+        #box1 {
+          background-color: cyan;
+        }
+      }
+      
+      /* 연습 */
+      /* box2의 배경색 바꾸기*/
+      /*
+        0 ~ 640px: red
+        641px ~ 1080px: green
+        1081px ~ : blue
+      
+       */
+      #box2 {
+        width: 200px;
+        height: 200px;
+      }
+      @media screen and (min-width: 1081px) {
+        #box2{
+          background-color: blue;  
+        }
+      }
+      @media screen and (min-width: 641px) and (max-width: 1080px){
+        #box2 {
+          background-color: green;
+        }
+      }
+      @media screen and (max-width: 640px){
+        #box2 {
+          background-color: red;
+        }
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+  </body>
+</html>

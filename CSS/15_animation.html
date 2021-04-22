@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>animation</title>
+    <style>
+      /*
+        애니메이션
+        1. transform : 형태 바꾸기
+          1) scale : 크기
+          2) rotate : 회전
+          3) skew : 기울이기
+          4) translate : 이동
+        2. keyframes 모듈
+        3. transition : 스타일 속성 변경하기
+       */
+      div {
+        width: 100px;
+        height: 100px;
+        margin: 30px;
+        
+      }
+      
+      @keyframes my_ani {
+        from { background-color: orange; }
+        to { background-color: red; }
+      }
+      
+      #box1 {
+        background-color: cyan;
+        /* box1에 my_ani 적용하기 */
+        animation-name: my_ani;
+        animation-duration: 2s; /* 동작하는 시간 : 2초 */
+        animation-timing-function: ease;
+        animation-iteration-count: infinite; /* 계속 반복해라. */
+        animation-delay: 500ms; /* 딜레이 : 0.5초 */
+      }
+      
+      @keyframes your_ani {
+        25% {background-color: green;}
+        50% {background-color: yellowgreen;}
+        75% {background-color: limegreen;}
+        100% {background-color: teal;}
+      }
+      
+      #box2 {
+        background-color: dodgerblue;
+        animation-name: your_ani;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+      }
+      
+      #rotate-box {
+        background-color: crimson;
+        /* 벤더프리픽스 */
+        -webkit-transform : rotate(10deg); /* 크롬, 사파리 */
+        -moz-transform : rotate(10deg); /* 파이어폭스 */
+        -o-transform : rotate(10deg); /* 오페라 */
+        transform: rotate(10deg); /* 시계방향으로 10도 회전 */
+      }
+      
+      #scale-box {
+        background-color: blueviolet;
+        transform: scale(2,0.5); /* 가로2배, 세로0.5배 크기*/
+      }
+      
+      #skew-box {
+        background-color: cornflowerblue;
+        transform: skewX(10deg); /* 10도 기울이기 */
+      }
+      
+      #translate-box {
+        background-color: gray;
+        transform: translate(100px, 100px); /* 가로방향,세로방향 */
+      }
+      
+      /* 마우스를 선택하면 1초 후 너비가 3배 늘어나는 박스 5초 동안 동작*/
+      #transition-box {
+        margin-top: 200px;
+        background-color: silver;
+        transition-delay: 1s; /*1초 후에 동작*/
+        transition-timing-function: ease;
+        transition-duration: 5s; /*5초 동안 동작*/
+        transition-property: background-color; /* transform에 적용 */
+      }
+      #transition-box:hover {
+        background-color: blue;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="rotate-box">회전상자</div>
+    <div id="scale-box"></div>
+    <div id="skew-box"></div>
+    <div id="translate-box"></div>
+    <div id="transition-box"></div>
+  </body>
+</html>

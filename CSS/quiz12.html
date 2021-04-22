@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz12</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style>
+      /* width: 768px 이하*/
+      @media screen and (max-width: 768px) {
+        #gnb > ul {
+          width: 100%;
+          overflow: hidden;
+          background-color: navy;
+          color: white;
+        }
+        #gnb > ul > li {
+          float: left;
+          padding: 10px 20px;
+        }
+        #gnb > ul > li:hover {
+          background-color: lightgreen;
+          color: black;
+        }
+      }
+      /* width: 769px 이상*/
+      @media screen and (min-width: 769px){
+        #container > #gnb {
+          float: left;
+          background-color: navy;
+          color: white;
+        }
+        #container > #content {
+          float: left;
+        }
+        #gnb > ul {
+          width: 100%;
+          height: 100vh;
+        }
+        #gnb > ul > li {
+          padding: 10px 20px;
+          padding-left: 20px;
+          margin: 5px;
+          margin-left: 15px;
+          margin-right: 0;
+        }
+        #gnb > ul > li:hover {
+          background-color: lightgreen;
+          color: black;
+          font-weight: bold;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="gnb">
+        <ul>
+          <li>카페</li>
+          <li>메일</li>
+          <li>뉴스</li>
+          <li>지도</li>
+          <li>증권</li>
+        </ul>
+      </div>
+      <div id="content">
+        <h1>반응형 웹</h1>
+        <p>반응형 웹은 사용자의 기기에 따라서 웹 페이지의 레이아웃을 즉각 변경하는 기술입니다. 근데 할 게 많아요!</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
 /*footer*/
 /*이용약관,개인정보처리방침,책임의 한계와 법적고지,회원정보 고객센터*/
+
 footer {
   margin-top: 100px;
   padding: 30px;
@@ -27,6 +28,12 @@ footer ul li:last-of-type {
   border-right: 0;
 }
 /*© NAVER Corp.*/
+footer strong {
+  font-weight: bold;
+}
+footer p {
+  font-size: 13px;
+}
 footer p a:first-of-type {
   font-family: 'Black Han Sans', sans-serif;
   color:limegreen;

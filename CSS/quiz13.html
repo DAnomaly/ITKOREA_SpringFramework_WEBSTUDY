@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz12</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style>
+      @media screen and (orientation: landscape){
+        #gnb > ul > li {
+          float: left;
+          padding: 30px;
+          margin: 5px;
+          color: lightgray;
+        }
+        #gnb > ul > li:hover {
+          color: darkgray;
+        }
+        #short-gnb {
+          position: absolute;
+          display: none;
+        }
+      }
+      @media screen and (orientation: portrait) {
+        #gnb {
+          position: absolute;
+          display: none;
+        }
+        #short-gnb {
+          float: left;
+          height: 100vh;
+          background-color: silver;
+        }
+        #short-gnb > span {
+          display: block;
+          width: 100%;
+          padding: 5px;
+          margin: 6px;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <!--gnb-->
+      <div id="gnb">
+        <ul>
+          <li>Start</li>
+          <li>Icons</li>
+          <li>Docs</li>
+          <li>Support</li>
+          <li>Plans</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+      <div id="short-gnb">
+        <span><i class="fas fa-bars fa-2x"></i></span>
+      </div>
+      <!--content-->
+      <div id="content">
+      
+      </div>
+    </div>
+  </body>
+</html>

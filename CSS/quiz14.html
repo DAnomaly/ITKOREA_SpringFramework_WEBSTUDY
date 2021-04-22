@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>animation</title>
+    <style>
+      #container {
+        text-align: center;
+      }
+      #menu img {
+        width: 300px;
+        height: 200px;
+        transition-duration: 2s;
+        position:relative;
+      }
+      #menu {
+        display: inline-block
+      }
+      #menu > div {
+        margin: 10px 20px;
+        float: left;
+        position:relative;
+      }
+      #menu .cover {
+        width: 300px;
+        height: 200px;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 200px;
+        opacity: 0;
+        color: white;
+        transition-timing-function: ease-out;
+        transition-duration: 0.5s;
+        transition-property: all;
+      }
+      #menu .cover h3 {
+        margin-top: 56px;
+      }
+      #menu div:hover > .cover{
+        opacity: 1;
+        transform:translate(0,-200px);
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="menu">
+        <div>
+          <img alt="베리" src="images/fruit1.jpg">
+          <div id="box1" class="cover">
+            <h3>과일1</h3>
+            <span>라즈베리 블루베리 블랙베리</span>
+          </div>
+        </div>
+        <div>
+          <img alt="배" src="images/fruit2.jpg">
+          <div id="box2" class="cover">
+            <h3>과일2</h3>
+            <span>배</span>
+          </div>
+        </div>
+        <div>
+          <img alt="바나나" src="images/fruit3.jpg">
+          <div id="box3" class="cover">
+            <h3>과일3</h3>
+            <span>바나나</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

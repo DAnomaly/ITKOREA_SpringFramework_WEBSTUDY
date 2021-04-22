@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>quiz15</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style>
+      h3 {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      aside {
+        width: 300px;
+        border: 1px solid black;
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      .content-list {
+        display: none;
+      }
+      /* id가 front인 radio가 선택되었다면, 프론트엔드 내용이 나타난다 */
+      #front:checked ~ #front-content {
+        display: block;
+      }
+      #front:checked ~ .tab-menu label[for="front"] {
+        font-weight: bolder;
+      }
+      #back:checked ~ #end-content {
+        display: block;
+      }
+      #back:checked ~ .tab-menu label[for="back"] {
+        font-weight: bolder;
+      }
+      .tab-menu {
+        display: flex;
+        border-bottom : 1px solid black;
+      }
+      .tab-menu > label {
+        display: block;
+        width: 150px;
+        padding: 20px 0;
+        text-align: center;
+        background-color: pink;
+      }
+      .content-list ul {
+        padding: 10px 0;
+      }
+      .content-list .content {
+        padding-bottom: 3px;
+        margin: 5px 0;
+        border-bottom: 1px solid gray;
+      }
+      .content-list .content:last-of-type {
+        padding-bottom: 0px;
+        border-bottom: 0;
+      }
+      
+      .content-list .content div {
+        margin: 0 10px;
+      }
+      
+      .thumbnail {
+        width: 100px;
+        height: 60px;
+        background-repeat:no-repeat;
+        background-size: 100px 60px;
+      }
+      #thumb1 {
+        background-image: url(images/fruit1.jpg);
+      }
+      #thumb2 {
+        background-image: url(images/fruit2.jpg);
+      }
+      #thumb3 {
+        background-image: url(images/fruit3.jpg);
+      }
+      #thumb4 {
+        background-image: url(images/cat.jpg);
+      }
+      #thumb5 {
+        background-image: url(images/dog.jpg);
+      }
+      #thumb6 {
+        background-image: url(images/eagle.jpg);
+      }
+    </style>
+  </head>
+  <body>
+    <aside>
+      <!-- 상단 탭 -->
+      <input type="radio" name="tab" id="front" checked>
+      <input type="radio" name="tab" id="back">
+      <div class="tab-menu">
+        <label for="front">프론트엔드</label>
+        <label for="back">백엔드</label>
+      </div>
+      <!-- 프론트엔드 클릭했을 때 나타날 화면 -->
+      <div id="front-content" class="content-list">
+        <ul>
+          <li class="content">
+            <!-- 작은이미지 -->
+            <div id="thumb1" class="thumbnail">
+            
+            </div>
+            <!-- 내용 -->
+            <div class="description">
+              <h3>HTML</h3>
+              <p>Hypertext Markup Language</p>
+            </div>
+          </li>
+          <li class="content">
+            <!-- 작은이미지 -->
+            <div id="thumb2" class="thumbnail">
+            
+            </div>
+            <!-- 내용 -->
+            <div class="description">
+              <h3>CSS</h3>
+              <p>Cascading Style Sheet</p>
+            </div>
+          </li>
+          <li class="content">
+            <!-- 작은이미지 -->
+            <div id="thumb3" class="thumbnail">
+            
+            </div>
+            <!-- 내용 -->
+            <div class="description">
+              <h3>JavaScript</h3>
+              <p>ECMA Script</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div id="end-content" class="content-list">
+        <ul>
+          <li class="content">
+            <!-- 작은이미지 -->
+            <div id="thumb4" class="thumbnail">
+            
+            </div>
+            <!-- 내용 -->
+            <div class="description">
+              <h3>JAVA</h3>
+              <p>Java</p>
+            </div>
+          </li>
+          <li class="content">
+            <!-- 작은이미지 -->
+            <div id="thumb5" class="thumbnail">
+            
+            </div>
+            <!-- 내용 -->
+            <div class="description">
+              <h3>JSP</h3>
+              <p>Java Server Page</p>
+            </div>
+          </li>
+          <li class="content">
+            <!-- 작은이미지 -->
+            <div id="thumb6" class="thumbnail">
+            
+            </div>
+            <!-- 내용 -->
+            <div class="description">
+              <h3>Spring</h3>
+              <p>Spring Framework</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  
+  </body>
+</html>
