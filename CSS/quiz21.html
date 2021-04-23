@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>quiz21</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/quiz21.css">
+  </head>
+  <body>
+    <header>
+      <h3>회원가입 폼</h3>
+    </header>
+    <section>
+      <form id="main-form" method="post" enctype="multipart/form-data">
+        <article class="art- box1">
+          <p class="title">필수정보</p>
+          <table>
+            <tbody>
+              <tr>
+                <th>아이디</th>
+                <td><input type="text" name="id" id="id" class="inp-txt"></td>
+              </tr>
+              <tr>
+                <th>비밀번호</th>
+                <td><input type="password" name="pwd1" id="pwd1" class="inp-txt"></td>
+              </tr>
+              <tr>
+                <th>비밀번호 확인</th>
+                <td><input type="password" name="pwd2" id="pwd2" class="inp-txt"></td>
+              </tr>
+              <tr>
+                <th>이름</th>
+                <td><input type="text" name="name" id="name" class="inp-txt"></td>
+              </tr>
+              <tr>
+                <th>성별</th>
+                <td>
+                  <input type="radio" name="gender" id="gender-none" class="gender-radio" checked>
+                  <label for="gender-none">선택안함</label>
+                  <input type="radio" name="gender" id="male" class="gender-radio">
+                  <label for="male">남자</label>
+                  <input type="radio" name="gender" id="female" class="gender-radio">
+                  <label for="female">여자</label>
+                </td>
+              </tr>
+              <tr>
+                <th>연락처</th>
+                <td>
+                  <select name="phone1" id="phone1" class="inp-txt inp-phone">
+                    <option value="010">010</option>
+                    <option value="02">02</option>
+                    <option value="032">032</option>
+                    <option value="031">031</option>
+                  </select>
+                  <span>-</span>
+                  <input type="number" name="phone2" id="phone2" class="inp-txt inp-phone">
+                  <span>-</span>
+                  <input type="number" name="phone3" id="phone3" class="inp-txt inp-phone">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+        <article class="art- box2">
+          <p class="title">선택정보</p>
+          <table>
+            <tbody>
+              <tr>
+                <th>닉네임</th>
+                <td><input type="text" name="nickname" id="nickname" class="inp-txt"></td>
+              </tr>
+              <tr>
+                <th>이메일</th>
+                <td>
+                  <input type="text" name="email1" id="email1" class="inp-txt email-txt">
+                  <span>@</span>
+                  <input type="text" name="email2" id="email2" class="inp-txt email-txt" list="email-list">
+                  <datalist id="email-list">
+                    <option value="naver.com">naver.com</option>
+                    <option value="daum.net">daum.net</option>
+                    <option value="gmail.com">gmail.com</option>
+                    <option value="nate.com">nate.com</option>
+                  </datalist>
+                </td>
+              </tr>
+              <tr>
+                <th>이메일수신</th>
+                <td>
+                  <input type="radio" name="email-agree" value="yes" id="email-agree1" class="agree-radio" checked><label for="email-agree1">수신</label>
+                  <input type="radio" name="email-agree" value="no" id="email-agree2" class="agree-radio"><label for="email-agree2">미수신</label>
+                </td>
+              </tr>
+              <tr>
+                <th>SMS수신</th>
+                <td>
+                  <input type="radio" name="sms-agree" value="yes" id="sms-agree1" class="agree-radio" checked><label for="sms-agree1">수신</label>
+                  <input type="radio" name="sms-agree" value="no" id="sms-agree2" class="agree-radio"><label for="sms-agree2">미수신</label>
+                </td>
+              </tr>
+              <tr>
+                <th>취미 활동</th>
+                <td>
+                  <input type="checkbox" name="hobby" value="reading" id="hobby1" class="hobby-checkbox"><label for="hobby1">독서</label>
+                  <input type="checkbox" name="hobby" value="fishing" id="hobby2" class="hobby-checkbox"><label for="hobby2">낚시</label>
+                  <input type="checkbox" name="hobby" value="swimming" id="hobby3" class="hobby-checkbox"><label for="hobby3">수영</label>
+                </td>
+              </tr>
+              <tr>
+                <th>프로필 사진</th>
+                <td><input type="file" name="profile" id="profile" class="inp-file"></td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+        <article class="art- box3">
+          <input type="submit" id="inp-submit" class="inp-button inp-submit" value="회원가입">
+          <input type="reset" id="inp-reset" class="inp-button inp-reset" value="다시작성">
+        </article>
+      </form>
+    </section>
+  </body>
+</html>

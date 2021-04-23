@@ -26,12 +26,13 @@ section button, input {
 }
 .left-section {
   float: left;
-}
-.right-section {
-  float: right;
+  padding-right: 10px;
 }
 .left-section .left-box {
   margin: 10px;
+}
+.left-section .left-box:nth-of-type(2) {
+  margin-top: 15px;
 }
 .left-section .left-box div {
   padding: 13px;
@@ -41,10 +42,12 @@ section button, input {
 .left-section .left-box .icon {
   display: inline-block;
   color: white;
+  width: 30px;
+  text-align: left;
 }
 .left-section .left-box .in_txt {
   display: inline-block;
-  width:180px;
+  width:150px;
 }
 .left-section .left-box a {
   margin: 2px;
@@ -63,5 +66,25 @@ section button, input {
   color: white;
   font-weight: bold;
   padding: 15px 30px;
+  margin-top: 12px;
   border-radius: 5px;
+}
+.right-section {
+  float: right;
+}
+.right-section .right-box button{
+  width: 215px;
+  height: 44px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: white;
+  text-align: left;
+}
+.right-section .login_twitter_btn{background-color: rgb(135,206,235);}
+.right-section .login_facebook_btn{background-color: rgb(0,0,139);}
+.right-section .login_google_btn{background-color: rgb(255,0,0);}
+.right-section .icon {
+  display: inline-block;
+  width: 30px;
+  margin-left: 10px; 
 }

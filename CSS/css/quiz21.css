@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* 초기화 */
+input[type="text"], input[type="password"], input[type="number"] {
+  border: none;
+  border: 1px solid #ddd;
+  outline: none;
+}
+input:focus {
+  background-color: #f0ffff;
+}
+th, td {
+  align-content: center;
+}
+th {
+  text-align: left;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+select {
+  border:none;
+  border: 1px solid #ddd;
+  outline: none;
+}
+select:focus, select:focus > option {
+  background-color: #f0ffff;
+}
+p {
+  color: black;
+  font-weight: bold;
+}
+/* header */
+header h3 {
+  color: #32cd32;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  padding: 30px;
+}
+/* section */
+section {
+  width: 460px;
+  margin: 0 auto;
+}
+section .title {
+  background-color: lightgray;
+  text-align: center;
+  padding: 5px 0;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+/* article box1 box2*/
+.art- {
+  margin-bottom: 10px;
+}
+.art- table tr td, .art- table tr th{
+  padding: 10px;
+}
+.art- table th{
+  width: 120px;
+}
+.art- table td{
+  width: 300px;
+}
+.art- .inp-txt {
+  width: 200px;
+}
+.art- .inp-phone {
+  width: 60px;
+}
+.art- .email-txt {
+  width: 120px;
+}
+/* article box3 */
+.box3 {
+  text-align:center;
+}
