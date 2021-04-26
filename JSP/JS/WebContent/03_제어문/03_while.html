@@ -69,7 +69,38 @@
 		var table = document.createElement('table');
 		table.border = "1";
 		table.style.borderCollapse = "collapse";
+		table.style.width = "90px";
+		table.style.height = "120px";
+		table.style.textAlign = "center";
 		document.getElementById('dial').appendChild(table);
+		var caption = document.createElement('caption');
+		caption.textContent = '다이얼';
+		table.appendChild(caption);
+		var n = 1;
+		var tr;
+		while(n <= 9){
+			switch (n) {
+			case 1: case 4: case 7:
+				tr = document.createElement('tr');	
+				table.appendChild(tr);
+				break;
+			}
+			var td = document.createElement('td');
+			td.textContent = n;
+			tr.appendChild(td);
+			n++;
+		}
+		tr = document.createElement('tr');
+		table.appendChild(tr);
+		td = document.createElement('td');
+		td.textContent = '#';
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = '0';
+		tr.appendChild(td);
+		td = document.createElement('td');
+		td.textContent = '*';
+		tr.appendChild(td);
 	</script>
 </body>
 </html>
