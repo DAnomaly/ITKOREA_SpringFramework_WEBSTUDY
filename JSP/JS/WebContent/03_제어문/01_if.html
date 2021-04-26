@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3 id="title"></h3>
+	<ul>
+		<li>이름: <span id="name"></span></li>
+		<li>평균: <span id="average"></span></li>
+		<li>학점: <span id="grade"></span></li>
+	</ul>
+	<script type="text/javascript">
+		if(confirm('제목을 입력할까요?')) {
+			var title = prompt('제목을 입력하세요') 
+			document.getElementById('title').textContent = title;
+		} else {
+			alert('제목입력이 취소되었습니다');			
+		}
+		// 이름, 국어, 영어, 수학 점수를 입력 받아서
+		// 화면에 평균과 학점을 계산하여 출력하시오.
+		var name = prompt('이름을 입력하세요');
+		var kor = prompt('국어점수를 입력하세요');
+		var eng = prompt('영어점수를 입력하세요');
+		var mat = prompt('수학점수를 입력하세요');
+		var avg = (Number(kor) + Number(eng) + Number(mat))/3;
+		var grade = 'F';
+		if(avg >= 90 ){
+			grade = 'A';
+		} else if(avg >= 80){
+			grade = 'B';
+		} else if(avg >= 70){
+			grade = 'C';
+		} else if(avg >= 60){
+			grade = 'D';
+		}
+		document.getElementById('name').textContent = name;
+		document.getElementById('average').textContent = parseInt(avg);
+		document.getElementById('grade').textContent = grade;
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+
+	<div id="one-to-ten"></div>
+	<script type="text/javascript">
+		/* 
+		var num = 1;
+		var content = ''
+		while(num <= 10){
+			content += '<p>' + num + '</p>';
+			num++;
+		}
+		document.getElementById('one-to-ten').innerHTML = content;
+		 */
+		/*
+		var num = 1;
+		while(num <= 10){
+			document.getElementById('one-to-ten').innerHTML += '<p>' + num + '</p>';
+			num++;
+		}
+		*/
+	</script>
+	<div id="list1"></div>
+	<script type="text/javascript">
+		/* 
+		var ul = document.createElement('ul');
+		document.getElementById('list1').appendChild(ul);
+		var n = 1;
+		while(n <= 5){
+			var li = document.createElement('li');
+			li.textContent = n;
+			ul.appendChild(li);
+			n++;
+		}
+		 */
+		/*
+		var result = "<ul>";
+		var n = 1;
+		while(n <= 5){
+			result += '<li>' + n + '</li>'
+			n++;
+		}
+		result += '</ul>';
+		document.getElementById('list1').innerHTML = result;
+		*/
+	</script>
+	<div id="select1"></div>
+	<script>
+		var monSelect = document.createElement('select');
+		monSelect.setAttribute('name','mm');
+		document.getElementById('select1').appendChild(monSelect);
+		var num = 1;
+		while(num <= 12){
+			var option = document.createElement('option');
+			option.setAttribute('value',num);
+			option.textContent = num + '월';
+			monSelect.appendChild(option);
+			num++;
+		}
+	</script>
+	<div id="dial">
+	</div>
+	<script>
+		var table = document.createElement('table');
+		table.border = "1";
+		table.style.borderCollapse = "collapse";
+		document.getElementById('dial').appendChild(table);
+	</script>
+</body>
+</html>

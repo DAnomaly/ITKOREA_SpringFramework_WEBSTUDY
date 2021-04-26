@@ -10,7 +10,14 @@
 			3. 요소 삭제 : 부모요소.removeChild(요소);
 			4. 요소 변경 : 부모요소.replaceChild(구요소, 신요소);
 		*/
-
+		/*
+			요소 선택 방법 (추가)
+			1. head 태그 : document.head
+			2. body 태그 : document.body
+			3. parentNode : 선택한 요소의 부모요소
+			4. childNodes : 선택한 요소의 모든 자식요소들. 유사배열에 저장된다.
+			5. firstChild/lastChild : 첫 번째 자식요소/마지막 자식요소
+		*/
 	
 	</script>
 </head>
@@ -24,6 +31,19 @@
 		// 3. 요소 삽입
 		document.getElementById('container').appendChild(title); // <div id="container"><h1>안녕하세요</h1></div>
 		
+		// 1. 다른 요소 만들기
+		var p = document.createElement('p'); // <p></p> 생성
+		// 2. 텍스트 요소 만들기
+		var content = document.createTextNode('반갑습니다. 자바스크립트입니다.');
+		// 3. p요소에 텍스트 요소 넣기
+		p.appendChild(content);
+		// 4. p요소를 넣기
+		document.body.appendChild(p);
+		
+		// 1. 삭제할 요소 알아내기
+		var deleteElement  = document.getElementById('container');
+		// 2. 요소 삭제
+		deleteElement.parentNode.removeChild(deleteElement);
 	</script>
 </body>
 </html>

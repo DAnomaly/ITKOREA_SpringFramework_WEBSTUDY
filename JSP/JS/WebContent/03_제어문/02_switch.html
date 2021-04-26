@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<div id="result"></div>
+	<script>
+		var score = Number(prompt('점수를 입력하세요.'));
+		var grade;
+		/*
+		// 1. 자바에서 배운대로 해 보기.
+		switch (parseInt(score/10)) {
+		case 10: case 9:
+			grade = 'A';
+			break;
+		case 8:
+			grade = 'B';
+			break;
+		case 7:
+			grade = 'C';
+			break;
+		case 6:
+			grade = 'D';
+			break;
+		default:
+			grade = 'F';
+			break;
+		}
+		*/
+		switch(true) {
+		case score >= 90: grade = 'A'; break;
+		case score >= 80: grade = 'B'; break;
+		case score >= 70: grade = 'C'; break;
+		case score >= 60: grade = 'D'; break;
+		default: grade = 'F'; break;
+		}
+		console.log(grade);
+		document.getElementById('result').innerHTML = '<h3>학점: ' + grade + '</h3>';
+	</script>
+</body>
+</html>
