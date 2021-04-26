@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		var a;
+		console.log(typeof a); // undefined
+		a = 1;
+		console.log(typeof a); // number
+		a = 'hello';
+		console.log(typeof a); // string
+		a = true;
+		console.log(typeof a); // boolean
+		a = null;
+		console.log(typeof a); // object (Null)
+		a = Math.sqrt(-5); // 루트 -5
+		console.log(a + ':' + typeof a); // NaN:number
+		a = 7 / 0;
+		console.log(a + ':' + typeof a); // Infinity:number
+		a = 7 / -0;
+		console.log(a + ':' + typeof a); // -Infinity:number
+		
+		/* 형변환 */
+		// 1. 숫자로 변환하기 : Number(값)
+		// 		1) 정수로 변환 : parseInt(값)
+		// 		2) 실수로 변환 : parseFloat(값)
+		// 2. 문자열로 변환하기 : String(값)
+		console.log(Number('123')); // 문자열 '123' -> 숫자 123
+		console.log(String(123)); // 숫자 123 -> 문자열 '123'  
+	</script>
+</head>
+<body>
+
+</body>
+</html>

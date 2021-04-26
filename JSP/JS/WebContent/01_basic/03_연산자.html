@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+		산술 연산자
+		1) +, -, *
+		2) ** : 제곱
+		3) / : 나누기
+		4) % : 나머지
+		5) 몫 
+			(1) parseInt(7/2): 3
+			(2) Math.floor(7/2): 3
+		6) 1 증가 : ++
+		7) 1 감소 : --
+	  */
+	 /*
+	 	2. 문자열 연결 연산자
+	 		1) + : 연결 연산자(문자열이 하나만 포함되어 있으면 무조건 연결)
+	  */
+	 /*
+	 	3. 문자열의 숫자 연산
+	 		1) 1 + '1' == '11' 	(문자열은 무조건 연결)
+	 		2) 1 - '1' == 0		(산술 연산)
+	 		3) 1 * '1' == 1		(산술 연산)
+	 		4) 1 / '1' == 1		(산술 연산)
+	  */
+	 /*
+	 	4. 관계 연산자
+	 		1) >, >=, <, <=
+	 		2) ==  : 값만 비교
+	 		3) === : 값과 타입을 비교
+	 		4) !=  : 값만 비교
+	 		5) !== : 값과 타입을 비교
+	  */
+	 console.log(1 == '1');
+	 console.log(1 == true);
+	 console.log(1 === '1');
+	 console.log(1 === true);
+	 /*
+	 	5. 논리 연산자
+	 		1) &&
+	 		2) ||
+	 		3) !
+	  */
+	 /*
+	 	6. 조건 연산자
+	 		(조건식) ? 결과가 true일 때 : 결과가 false일 때
+	  */
+	 // [quiz]
+	 // 올해 최저시급은 8720원이다.
+	 // 8시간 근무까지는 최저시급을 적용받고
+	 // 초과 근무는 최저시급의 1.5배를 적용받는다.
+	 // 10시간 근무하면 페이는 얼마인가?
+	 var min_salary = 8720;
+	 var time = 10;
+	 var salary = time > 8 ? min_salary * 8 + min_salary * (time - 8) * 1.5  : min_salary * time;
+	 console.log(salary);
+</script>
+</head>
+<body>
+
+</body>
+</html>

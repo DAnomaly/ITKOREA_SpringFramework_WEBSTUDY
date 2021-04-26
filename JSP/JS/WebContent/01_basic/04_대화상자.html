@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	// 1. 경고창
+	// alert('경고메시지'); 
+	/* 
+	// 2. 확인창
+	a = confirm('확인메시지'); // '확인'버튼을 클릭하면 true 반환, '취소'버튼을 클릭하면 false 반환
+	console.log(a);
+	
+	// 3. 입력창
+	b = prompt('입력메시지');  // 입력된 내용을 반환
+	console.log(typeof b);     // 입력된 내용의 타입은 무조건 String
+	console.log(b);
+	 */
+	
+	// 이름을 입력 받아서 "내 이름은 xxx입니다."
+	// 나이를 입력 받아서 "성인/미성년자이고, 내년 나이는 xx살입니다"
+	name = prompt('이름을 입력해 주세요');
+	alert('내 이름은 ' + name + "입니다");
+	age = prompt('나이를 입력해 주세요');
+	alert((age >= 20 ? '성인' : '미성년자') + '이고, 내년 나이는 ' + (parseInt(age) + 1) + '살입니다' ); 
+	 
+</script>
+<body>
+
+</body>
+</html>

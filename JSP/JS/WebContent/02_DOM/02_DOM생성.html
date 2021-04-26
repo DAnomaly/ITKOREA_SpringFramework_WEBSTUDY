@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		/* 
+			1. 요소 생성 : document.createElement(요소);
+			2. 요소 삽입 : 부모요소.appendChild(요소);
+			3. 요소 삭제 : 부모요소.removeChild(요소);
+			4. 요소 변경 : 부모요소.replaceChild(구요소, 신요소);
+		*/
+
+	
+	</script>
+</head>
+<body>
+	<div id="container"></div>
+	<script>
+		// 1. 요소 만들기
+		var title = document.createElement('h1'); // <h1></h1> 생성
+		// 2. 요소에 텍스트 삽입
+		title.textContent = '안녕하세요';
+		// 3. 요소 삽입
+		document.getElementById('container').appendChild(title); // <div id="container"><h1>안녕하세요</h1></div>
+		
+	</script>
+</body>
+</html>
