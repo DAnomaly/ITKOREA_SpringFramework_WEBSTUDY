@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+		/*
+			배열
+			1. 대괄호([])를 이용한다.
+			2. 배열의 요소들의 자료형은 서로 같을 필요가 없다.
+		 */
+		// 1. 배열 만들기
+		var array1 = [10,3.14,false,'hello',{'name':'민경태'},function(){}];
+		var array2 = [];
+		var array3 = new Array(10,20,30); // 느리므로 비추천
+		
+		// 2. 배열의 자료형 확인
+		console.log(typeof array1);
+		
+		// 3. 배열의 요소 확인
+		console.log(array1[0]);
+		console.log(array2[0]);
+		console.log(array3[0]);
+		
+		// 4. 배열의 요소 다루기
+		array2[0] = 100;
+		array2[2] = 300;
+		console.log(array2[0]);
+		console.log(array2[1]); // undefined (인덱스를 직접 다루면 홀(hole)이 생길 우려가 있다.)
+		console.log(array2[2]);
+		
+		var arr = [1,2,3];
+		// 1) 추가 메소드
+		arr.push(4); // 마지막 요소로 4를 추가 ▶ (4)[1,2,3,4]
+		arr.unshift(5); // 첫번째 요소로 5를 추가 ▶ (5)[5,1,2,3,4]
+		arr.splice(2,0,6); // 인덱스2에서 (0 떨어진 위치에) 6을 추가 ▶ (6)[5,1,6,2,3,4]
+		console.log(arr);
+		// 2) 제거 메소드
+		var del1 = arr.pop(); // 마지막 요소를 반환하고 삭제 (5)[5,1,6,2,3]
+		var del2 = arr.shift(); // 첫번째 요소를 반환하고 삭제 (4)[1,6,2,3]
+		var del3 = arr.splice(1, 1); // 인덱스1부터 1개 삭제 (3)[1,2,3]
+		console.log(del1,del2,del3,arr); 
+		
+		// 5. 배열의 길이
+		//    배열의 길이를 수정할 수 있다.
+		console.log(arr.length);
+		arr.length = 5;
+		console.log(arr);
+		console.log(arr[0],arr[1],arr[2],arr[3],arr[4]);
+	</script>
+</head>
+<body>
+		
+</body>
+</html>

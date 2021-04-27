@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		// 1. 일반 for문
+		var arr = ['a','b','c'];
+		for (let i = 0; i < arr.length; i++) {
+			console.log(arr[i]);
+		}
+		
+		// 2. for-in문
+		for ( let i in arr) {
+			console.log(arr[i]);
+		}
+		// 일반적으로 배열에서는 for-in문이 일반 for문 보다 느리므로, 일반 for문 추천.
+		
+		// 3. for-of문
+		for (let i of arr) {
+			console.log(i);
+		}
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

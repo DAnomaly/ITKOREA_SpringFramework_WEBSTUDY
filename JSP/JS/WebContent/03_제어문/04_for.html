@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+		table, td {
+			border: 1px solid black;
+		}
+		td {
+			padding: 5px 3px;
+		}
+		.even {
+			background-color: lightgreen;
+		}
+	</style>
+</head>
+<body>
+	<div id="practice1"></div>
+	<script>
+		// 정수를 입력 받아서 입력 받은 구구단 태이블 출력하기
+		// let p1No = Number(prompt('정수를 입력하세요')); 
+		let p1No = 10;
+		let p1table = document.createElement('table');
+		if (p1No % 2 == 0){
+			p1table.setAttribute('class','even');
+		}
+		let p1tbody = document.createElement('tbody');
+		p1table.appendChild(p1tbody);
+		for (let i = 1; i <= 9; i++) {
+			let p1tr = document.createElement('tr');
+			for (var j = 0; j < 5; j++) {
+				let p1td = document.createElement('td');
+				switch(j){
+					case 0: p1td.textContent = p1No; break;
+					case 1: p1td.textContent = 'x'; break;
+					case 2: p1td.textContent = i; break;
+					case 3: p1td.textContent = '='; break;
+					case 4: p1td.textContent = p1No * i; break;
+				}
+				p1tr.appendChild(p1td);
+			}
+			p1tbody.appendChild(p1tr);
+		}
+		document.getElementById('practice1').appendChild(p1table);
+	</script>
+	<hr/>
+	<div id="practice2"></div>
+	<script>
+		// 전체 구구단 출력하기
+		let p2table = document.createElement('table');
+		let p2tbody = document.createElement('tbody');
+		p2table.appendChild(p2tbody);
+		for (let i = 1; i <= 9; i++) {
+			let p2tr = document.createElement('tr');
+			for (let j = 2; j <= 9; j++) {
+				let p2str = j + " x " + i + " = " + (j * i);
+				let p2td = document.createElement('td');
+				p2td.textContent = p2str;
+				p2tr.appendChild(p2td);
+			}
+			p2tbody.appendChild(p2tr);	
+		}
+		document.getElementById('practice2').appendChild(p2table);
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<body>
+	<div id="practice1"></div>
+	<script>
+		var message = '';
+		for (let n = 1; n < 100; n++) {
+			let digits = n % 10; 		 // 일의 자리
+			let tens = parseInt(n / 10); // 십의 자리
+			let is369 = (digits != 0 && digits % 3 == 0) 
+					 ||	(tens != 0 && tens % 3 == 0);
+			if (is369){
+				continue; // for문의 n++로 이동한다.
+			}
+			message += n + '&nbsp;';
+			if (n % 10 == 0){
+				message += '<br>';
+			}
+		}
+		document.getElementById('practice1').innerHTML = message;
+	</script>
+	<hr/>
+	<div id="practice2"></div>
+	<script>
+		// 5개 양수를 입력받아서 그 평균을 출력하시오.
+		// 양수 이외의 데이터가 입력되면 '양수가 아닙니다. 다시 입력하세요.'
+		var nums = [];
+		for (let i = 0; i < 5; i++) {
+			let num = Number(prompt((i+1) + '번째: 양수를 입력하세요'));
+			if(num < 0 || isNaN(num)){
+				alert('양수가 아닙니다. 다시 입력하세요.');
+				i--;
+				continue;
+			}
+			nums[i] = num;
+		}
+		var avg = 0;
+		for (let i = 0; i < nums.length; i++) {
+			avg += Number(nums[i]);
+		}
+		avg /= nums.length;
+		var str = '평균: ' + avg;
+		document.getElementById('practice2').textContent = str;
+	</script>
+</body>
+</html>
