@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Quiz01</title>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	ul {
+		list-style: none;
+		padding: 20px 10px;
+		padding-left: 30px; 
+		width: 120px;
+		height: 100vh;
+		background-color: gray;
+		float: left;
+	}
+	li {
+		text-align: right;
+		background-color: lightgray;
+		padding: 5px 20px;
+		margin: 10px 0; 
+	}
+	li:hover {
+		background-color: black; 
+		color: white;
+		font-weight: bold;
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li>라면</li>
+		<li>우동</li>
+		<li>김밥</li>
+		<li>튀김</li>
+		<li>순대</li>
+	</ul>
+	<input type="button" onclick="javascript:remove()" value="삭제">
+	<script>
+		//입력 받은 메뉴를 삭제하자.
+		function remove() { 
+			var input = prompt('삭제할 메뉴 명을 입력하세요\n' 
+			                 + '[라면,우동,김밥,튀김,순대]');
+			var lis = document.querySelectorAll('ul li');
+			var result = false;
+			for (let i = 0; i < lis.length; i++) {
+				if(lis[i].textContent == input){
+					lis[i].parentNode.removeChild(lis[i]);
+					result = true;
+					break;
+				}
+			}
+			if(result == false){
+				alert(input + '을(를) 찾을 수 없습니다');
+			}
+			
+		}
+	</script>
+</body>
+</html>

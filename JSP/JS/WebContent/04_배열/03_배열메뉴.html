@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>03_배열메뉴</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap');
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			margin: 20px 40px;
+			overflow: hidden;
+		}
+		li {
+			float: left;
+			list-style: 	none;
+		}
+		a {
+			display: block;
+			margin: 0 10px;
+			padding: 10px 20px;
+			border-bottom : 1px solid black; 
+			color: black;
+			text-decoration: none;
+		}
+		a:hover {
+			color: rgb(239, 16, 16);  
+			border-bottom : 1px solid rgb(239, 16, 16);
+		}
+		header * {
+			font-family: 'Gaegu', cursive;
+			font-size: 20px;
+			font-weight: 700; 
+		}		
+	</style>
+</head>
+<body>
+<!-- 
+	<ul>
+		<li><a href="javascript:void(0)">사전</a></li>
+		<li><a href="javascript:void(0)">뉴스</a></li>
+		<li><a href="javascript:void(0)">증권</a></li>
+		<li><a href="javascript:void(0)">부동산</a></li>
+		<li><a href="javascript:void(0)">지도</a></li>	
+	</ul>
+ -->
+ 	<header>
+		<div class="gnb"></div>
+	</header>
+	
+	<script type="text/javascript">
+		var navs = ['메일','카페','블로그','쇼핑','PAY'];
+		var ul = document.createElement('ul');
+		for (let i = 0; i < navs.length; i++) {
+			let li = document.createElement('li');
+			let a = document.createElement('a');
+			a.setAttribute('href','javascript:void(0)');
+			a.textContent = navs[i];
+			li.appendChild(a);
+			ul.appendChild(li);
+		}
+		document.getElementsByClassName('gnb')[0].appendChild(ul);
+	</script>
+</body>
+</html>

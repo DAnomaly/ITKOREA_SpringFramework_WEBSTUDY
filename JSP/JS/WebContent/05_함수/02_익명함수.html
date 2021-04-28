@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/* 
+		익명 함수
+		1. 함수의 이름이 없다.
+		2. 어떤 변수에 저장된 뒤에 호출할 수 있다.
+		3. '함수 정의'가 반드시 '함수 호출'보다 코드상 먼저 나타나야 한다.
+			(호이스팅의 대상이 아니다.)
+		4. '함수 정의'
+			(1) 일반 익명 함수
+				function (매개변수) {
+					함수 본문
+					return 값;
+				}
+			(2) 화살표 함수 (arrow)
+				(매개변수) => {
+					함수 본문
+					return 값;
+				}
+	 */
+	// 1. 익명 함수는 '반드시' 먼저 정의한다.
+	// 	  익명 함수는 '반드시' 변수에 저장한다.
+	var f = function(){
+				console.log('Hello Function.');
+			}
+	// 2. 변수를 함수명으로 사용해서 호출한다. 
+	f();
+	
+	// 일반 익명 함수
+	var whoAmI = function(name,age) {
+		console.log('이름: ' + name + ', 나이: ' + age + '살');
+	}
+	whoAmI('브레드',10);
+	
+	// 화살표 함수
+	var whoAreYou = (name, age) => {
+		console.log('이름: ' + name + ', 나이: ' + age + '살');
+	}
+	whoAreYou('초코',5);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

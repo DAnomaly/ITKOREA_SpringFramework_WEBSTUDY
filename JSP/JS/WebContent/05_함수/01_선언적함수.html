@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선언적함수</title>
+<script>
+	/* 
+		선언적 함수
+		1. 함수의 이름이 있다.
+		2. '함수 정의' : 함수를 만드는 것
+			function 함수명(매개변수) {
+				함수본문
+				return 값;
+			}
+		3. '함수 호출' : 함수를 사용하는 것
+			함수명(인수);
+		4. 동일한 함수를 여러 번 만들면 덮어쓰기가 된다.
+		5. 함수를 변수에 저장할 수 있다. (변수가 함수명)
+		6. '함수 정의'와 '함수 호출'의 코드상 순서가 없다. 누구를 먼저 작성하든 상관 없다.
+			* 호이스팅(Hoisting)
+			  : 변수 선언, 선언적 함수 정의를 스스로 코드의 맨 첫 부분으로 옮겨서 처리하는 것
+	 */
+
+	// 호이스팅 체크
+	a = 10;
+	var a;
+	console.log(a);
+	
+	// 1. 함수 정의
+	function whoAmI(name, age) { // 매개변수에 선언 키워드(var, let, const)가 오지 않는다.
+		console.log('이름: ' + name + ', 나이: ' + age + '살');
+	}
+	// 2. 함수의 호출
+	whoAmI('뽀로로',18);
+	
+	// 호이스팅 체크
+	whoAreYou('루피',15);
+	function whoAreYou(name,age) {
+		console.log('이름: ' + name + ', 나이: ' + age + '살');
+	}
+	
+	// 3. 함수를 변수에 저장하기
+	var f = function whereAreYou(address) {
+		console.log('나는  ' + address+ "에 산다.");
+	}
+	// whereAreYou('서울'); // 함수명(인수); -> 함수명이 변수명으로 수정되기 때문에 접근이 불가능해 진다.
+	f('부산'); // 변수명(인수);
+</script>
+</head>
+<body>
+</body>
+</html>
