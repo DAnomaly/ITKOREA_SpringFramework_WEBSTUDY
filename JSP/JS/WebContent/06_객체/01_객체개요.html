@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체개요</title>
+<script type="text/javascript">
+	/*
+		객체(object)
+		
+		1. 여러 변수를 하나로 모은 데이터이다.
+		2. 객체를 구성하는 구성요소(변수)를 '속성(property)'이라고 한다.
+		3. 객체 생성
+			var 객체 = {속성:값,속성:값,...,속성:값};
+		4. 객체의 속성(프로퍼티, property) 사용방법
+			1) 마침표(.) 표기법  : 객체.속성
+			2) 대괄호([]) 표기법 : 객체['속성']
+	*/
+	var person = 
+		{
+			'name':'브레드',
+			'age':20
+		};
+	// 2. 객체의 프로퍼티 확인
+	console.log(person.name);
+	console.log(person.age);
+	console.log(person['name']);
+	console.log(person['age']);
+	
+	// 객체의 프로퍼티는 변수, 배열, 함수, 객체 등 모든 데이터를 저장할 수 있다.
+	var person = {
+		'name':'청포도',
+		'age':12,
+		'birthday':'2011-03-03',
+		'friend': {
+			'name':'블루베리',
+			'age':12,
+			'birthday':'2011-08-25'
+		},
+		'bag':[
+			'우유',
+			'빵'
+		],
+		'run':function(){
+			console.log('I like running!');
+		}
+	};
+	console.log('name: ' + person.name);
+	console.log('age: ' + person.age);
+	console.log('birthday: ' + person.birthday);
+	console.log('friend-name: ' + person.friend.name);
+	console.log('friend-age: ' + person.friend.age);
+	console.log('friend-birthday: ' + person.friend.birthday);
+	for (let i = 0; i < person.bag.length; i++) {
+		console.log('bag-item: ' + person.bag[i]);
+	}
+	person.run();
+</script>
+</head>
+<body>
+
+</body>
+</html>

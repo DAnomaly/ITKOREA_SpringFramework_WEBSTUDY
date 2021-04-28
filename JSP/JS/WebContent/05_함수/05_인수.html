@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>인수</title>
+<script type="text/javascript">
+	
+	// 1. 변수 전달
+	// (function (매개변수){ })(인수)
+	(function (name) {
+		console.log('이름: ' + name);
+	})('브레드');
+	
+	// 2. 배열 전달
+	var arr = [1,2,3,4,5];
+	printArray(arr);
+	function printArray(a) {
+		for (let i = 0; i < arr.length; i++) {
+			console.log(a[i]);
+		}
+	};
+	
+	// 3. 함수 전달
+	function f (callback,name){
+		callback(name);
+	}
+	f(function(name){
+		console.log('이름: ' + name);
+	},'브레드');
+	
+	// 4. 전달하는 인수 -> 지정받은 매개변수
+	// 서로 개수 가 안 맞아도 오류 없이 동작한다.
+	function showAmI(name,age){
+		console.log('이름: ' + name + ', 나이: ' + age +'살');
+	}
+	showAmI('브레드',20); 
+	
+	// 5. 전개 연산자(...)
+	function addr(...numbers) {
+		var total = 0;
+		for (let i = 0; i < numbers.length; i++){
+			console.log((i+1) + '번째 인수: ' + numbers[i]);
+			total += numbers[i];
+		}
+		console.log('합계 ' + total);
+	}
+	addr(1);
+	addr(1,2);
+	addr(1,2,3);
+	
+	// 6. 디폴트로 처리하기
+	// 인수가 전달되지 않은 매개변수는 undefined상태
+	// 즉, 전달 유무를 알 수 있다.
+	// 전달되지 않았다면 어떤 값을 사용한다고 정해두는 것을 디폴트 처리라고 한다.
+	function multiplication(a,b) {
+		// 매개변수 a와 b로 전달되는 인수가 없으면 디폴트로 1을 사용한다.
+		/*
+		if(a == undefined) {a = 1;}
+		if(b == undefined) {b = 1;}
+		*/
+		// undefined는 false와 같은 같으로 본다.
+		// true || a = 1;  (a = 1이 실행되지 않는다)
+		// false || a = 1; (a = 1이 실행된다)
+		a || (a = 1);
+		b || (b = 1);
+		console.log('곱셈 결과: ' + (a * b));
+	}
+	multiplication();
+	multiplication(3);
+	multiplication(3,4);
+	
+	// 7. 인수 상관 없이 매개변수를 사용하지 않는다.
+	//  1) 모든 함수는 특별한 객체인 arguments 객체를 가지고 있다.
+	//  2) 함수로 전달된 모든 인수는 알아서 arguments 객체에 저장된다.
+	//  3) arguments 객체는 배열과 유사하다. 배열처럼 사용할 수 있다.
+	function whoAmI() {
+		console.log(arguments);
+		console.log(typeof arguments);
+		for (let i = 0; i < arguments.length; i++) {
+			console.log((i + 1) + '번째 인수: ' + arguments[i]);
+		}
+	}
+	whoAmI('브레드');
+	whoAmI('브레드',10);
+	
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>

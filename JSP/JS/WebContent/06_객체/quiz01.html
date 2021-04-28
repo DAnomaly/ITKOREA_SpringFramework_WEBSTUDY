@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>quiz01</title>
+</head>
+<body>
+	<div id="practice1"></div>
+	<script>
+		var people = [
+			{
+				'name':'브레드',
+				'age':10
+			},
+			{
+				'name':'윌크',
+				'age':10
+			},
+			{
+				'name':'초코',
+				'age':4
+			}
+		];
+		
+		var table = document.createElement('table');
+		var thead = document.createElement('thead');
+		var tr = document.createElement('tr');
+		for ( let index in people[0]) {
+			var th = document.createElement('th');
+			th.textContent = index;
+			tr.appendChild(th);
+		}
+		thead.appendChild(tr);
+		table.appendChild(thead);
+		var tbody = document.createElement('tbody');
+		for (let i = 0; i < people.length; i++) {
+			var tr = document.createElement('tr');
+			for ( let el in people[i]) {
+				var td = document.createElement('td');
+				td.textContent = people[i][el];
+				tr.appendChild(td);
+			}
+			tbody.appendChild(tr);
+		}
+		table.appendChild(tbody);
+		document.getElementById('practice1').appendChild(table);
+	</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>quiz02</title>
+<style>
+	body {
+		margin : 0 auto;
+		text-align: center;
+	}
+	table {
+		margin : 60px auto;
+		border-bottom: 2px solid gray;
+		border-right: 2px solid gray;
+		border-bottom-right-radius: 10px;  
+	}
+	caption {
+		padding: 10px 0; 
+		font-weight: bold;
+	}
+	th {
+		background-color: lightblue; 
+		border-bottom: 3px solid gray;
+	}
+	tr:nth-of-type(2n+2) td {
+		background-color: lightgray; 
+	}
+	th, td {
+		padding: 5px 10px;
+	}
+	td {
+		text-align: left; 
+	}
+</style>
+</head>
+<body>
+	<table>
+		<caption>도서목록</caption>
+		<thead>
+			<tr>
+				<th>제목</th>
+				<th>저자</th>
+				<th>가격</th>
+				<th>출판사</th>
+			</tr>
+		</thead>
+		<tbody id="contents">
+		
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		var books = [
+			{'title':'나는 자바다','writer':'김자바','price':30000,'publisher':'자바출판사'},
+			{'title':'푸른 하늘','writer':'하늘하','price':8000,'publisher':'하늘출판사'},
+			{'title':'알수 없어','writer':'넌지시','price':5000,'publisher':'정출판'},
+			{'title':'나는 오라클이다','writer':'정오라','price':38000,'publisher':'자바출판사'},			
+			{'title':'나는 스프링이다','writer':'어니언','price':26000,'publisher':'자바출판사'}			
+		];
+		
+		var th_titles = ['title','writer','price','publisher'];
+		for (var i = 0; i < books.length; i++) {
+			var tr = document.createElement('tr');
+			document.getElementById('contents').appendChild(tr);
+			for (let th = 0; th < th_titles.length; th++) {
+				var td = document.createElement('td');
+				td.textContent = books[i][th_titles[th]];
+				tr.appendChild(td);
+			}
+		}
+	</script>
+</body>
+</html>
