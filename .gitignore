@@ -16,7 +16,7 @@ local.properties
 .recommenders
 
 # Servers
-.Servers
+Servers
 
 # External tool builders
 .externalToolBuilders/
