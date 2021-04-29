@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Math</title>
+	<script type="text/javascript">
+		console.log('파이', Math.PI);
+		console.log('제곱', Math.pow(2,3));
+		console.log('절대값', Math.abs(-3));
+		console.log('최대값', Math.max(10,20,30,40,50));
+		console.log('최소값', Math.min(10,20,30,40,50));
+		console.log('루트', Math.sqrt(25));
+		console.log('반올림', Math.round(1.5));
+		console.log('올림', Math.ceil(1.5));
+		console.log('내림', Math.floor(1.5));
+		console.log('절사', Math.trunc(1.5));
+		console.log('난수', Math.random()); // 0 <= 난수 < 1 (실수)
+	</script>
+	<script>
+		// 반올림, 올림, 내림, 절사를 자릿수 지정이 가능하도록 함수 구현하기
+		// 반올림
+		function round(num,n) {
+			n || (n = 0);
+			var loc = Math.pow(10,n);
+			return Math.round(num * loc) / loc;
+		}
+		console.log('354.14567 [소수 3자리 반올림]',round(354.14567,3));
+		console.log('354.14567 [소수 2자리 반올림]',round(354.14567,2));
+		console.log('354.14567 [소수 1자리 반올림]',round(354.14567,1));
+		console.log('354.14567 [소수 0자리 반올림]',round(354.14567));
+		console.log('354.14567 [소수 -1자리 반올림]',round(354.14567,-1));
+		console.log('354.14567 [소수 -2자리 반올림]',round(354.14567,-2));
+		// 올림
+		function ceil(num,n) {
+			n || (n = 0);
+			var loc = Math.pow(10,n);
+			return Math.ceil(num * loc) / loc;
+		}
+		// 내림
+		function floor(num,n) {
+			n || (n = 0);
+			var loc = Math.pow(10,n);
+			return Math.floor(num * loc) / loc;
+		}
+		//절사
+		function floor(num,n) {
+			n || (n = 0);
+			var loc = Math.pow(10,n);
+			return Math.trunc(num * loc) / loc;
+		}
+		
+		// (n1<= n < n2)난수
+		function random(n1,n2) {
+			n1 || (n1 = 0);
+			n2 || (n2 = 0);
+			var minnum = Math.min(n1,n2);
+			var maxnum = Math.max(n1,n2);
+			return Math.random() * (maxnum-minnum) + minnum;
+		}
+		console.log(random());
+		console.log(random(-1,1));
+		console.log(random(3,-1));
+		
+		// 난수 -> 내림
+		function getNum(n1,n2,digit) {
+			return floor(random(n1,n2),digit);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

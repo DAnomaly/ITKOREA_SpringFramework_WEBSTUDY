@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>타이머함수</title>
+	<script type="text/javascript">
+	/*
+		1. 한 번만 실행하는 setTimeout;
+		  1) setTimeout(함수,밀리초);
+		  2) var id = setTimeout(함수,밀리초); // id는 setTimeout() 함수의 식별자
+		  	 clearTimeout(id); // setTimeout() 함수의 동작 취소
+		2. 반복 실행하는 setInterval
+		  1) setInterval(함수,밀리초);
+		  2) var id = setInterval(함수,밀리초);
+		     clearInterval(id);
+	*/
+	
+	// 	5초후에 터지는 폭탄
+	/*
+		var boom = setTimeout(function () {
+			document.write('<h1>펑');
+		}, 5000);
+	
+		if (confirm('폭탄 헤제를 원하면 5초 안에 확인을 누르시오.'))
+			clearTimeout(boom);
+	*/
+	
+	//  5초 타이머 폭탄 ( 5 4 3 2 1 )
+	/*
+		var countdown = 5;
+		var boom2 = setInterval(function () {
+			if(countdown == 0){
+				document.write('펑');
+				clearInterval(boom2);				
+			} else {
+				document.write(countdown-- + '&nbsp;');
+			}
+		}, 1000); 
+	*/
+	//  5초 타이머 폭탄
+		countdown = 5;
+		function timerBoom() {
+			setTimeout(function(){
+				if(countdown == 0) {
+					document.write('펑');
+					return; // 함수 종료
+				} 
+				document.write(countdown-- + '&nbsp;');
+				timerBoom(); // 재귀함수
+			}, 1000);
+		}
+		timerBoom();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>quiz01</title>
+<style>
+	#box {
+		width: 300px;
+		height: 300px;
+		line-height: 300px;
+		text-align: center;
+		font-size: 60px;
+		font-weight: bold;
+		color: white;
+	}
+	#box[style="background-color: yellow;"] {
+		color: black;
+	}
+</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script type="text/javascript">
+		(function () {
+			var box = document.getElementById('box');
+			var str = ['빨','주','노','초','파','남','보'];
+			var color = ['red','orange','yellow','green','blue','midnightblue','purple']
+			var i = 0;
+			setInterval(function () {
+				box.textContent = str[i];
+				box.style.backgroundColor = color[i];
+				i++;
+				if(i >= 7) i = 0;
+			},500) 
+		})();
+	</script>
+</body>
+</html>

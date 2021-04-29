@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>watch</title>
+</head>
+<body>
+	<h1>
+		현재 시간은
+		<span id="year"></span>년&nbsp;
+		<span id="month"></span>월&nbsp;
+		<span id="date"></span>일&nbsp;
+		<span id="day"></span>요일&nbsp;
+		<span id="ampm"></span>&nbsp;
+		<span id="hour"></span>시&nbsp;
+		<span id="minute"></span>분&nbsp;
+		<span id="second"></span>초입니다.
+	</h1>
+	<script type="text/javascript">
+		function fillzero(n) {
+			// 월: 1~12, 일: 1~31, 시: 0~23, 분,초: 0~59
+			return n >= 10 ? '' + n : '0' + n
+		}
+		(function watch() {
+			setTimeout(function () {
+				var now = new Date();
+				document.getElementById('year').textContent = now.getFullYear();
+				document.getElementById('month').textContent = fillzero(now.getMonth() + 1);
+				document.getElementById('date').textContent = fillzero(now.getDate());
+				var weekname = ['일','월','화','수','목','금','토'];
+				document.getElementById('day').textContent = weekname[now.getDay()];
+				var ampm = now.getHours() < 12 ? '오전' : '오후';
+				document.getElementById('ampm').textContent = ampm;
+				document.getElementById('hour').textContent = fillzero(now.getHours() < 12 ? now.getHours() : now.getHours() - 12);
+				document.getElementById('minute').textContent = fillzero(now.getMinutes());
+				document.getElementById('second').textContent = fillzero(now.getSeconds()); 	
+				watch();			
+			},1000)
+		})();
+	</script>
+</body>
+</html>

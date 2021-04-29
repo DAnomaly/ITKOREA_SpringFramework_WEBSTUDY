@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Dday</title>
+</head>
+<body>
+	<!-- Dday 2021년 11월 18일 목요일 -->
+	<!-- 
+		Dday 100일 10시간 5분 30초 (검정색)
+		Dday 23시간 52분 58초 (빨간색)
+		Dday 입니다. 
+	-->
+	<h1>
+		<span class="title">Today</span>
+		<span id="today">
+			<span id="today-year"></span>년
+			<span id="today-month"></span>월
+			<span id="today-date"></span>일
+			<span id="today-day"></span>요일
+			<span id="today-ampm"></span><span id="today-hour"></span>:<span id="today-minute"></span>:<span id="today-second"></span>
+		</span>
+	</h1>
+	<h1>
+		<span class="title">From</span>
+		<span id="from">
+			<span id="from-year"></span>년
+			<span id="from-month"></span>월
+			<span id="from-date"></span>일
+			<span id="from-day"></span>요일
+			<span id="from-ampm"></span><span id="from-hour"></span>:<span id="from-minute"></span>:<span id="from-second"></span>
+		</span>
+	</h1>
+	<h1>
+		<span class="title">Dday</span>
+		<span id="d-day"></span>
+	</h1>
+	<script type="text/javascript">
+	
+		function fillzero(n) {
+			// 월: 1~12, 일: 1~31, 시: 0~23, 분,초: 0~59
+			return n >= 10 ? '' + n : '0' + n
+		}
+		
+		(function today() {
+			setTimeout(function () {
+				var now = new Date();
+				document.getElementById('today-year').textContent = now.getFullYear();
+				document.getElementById('today-month').textContent = fillzero(now.getMonth() + 1);
+				document.getElementById('today-date').textContent = fillzero(now.getDate());
+				var weekname = ['일','월','화','수','목','금','토'];
+				document.getElementById('today-day').textContent = weekname[now.getDay()];
+				var ampm = now.getHours() < 12 ? 'AM' : 'PM';
+				document.getElementById('today-ampm').textContent = ampm;
+				document.getElementById('today-hour').textContent = fillzero(now.getHours() < 12 ? now.getHours() : now.getHours() - 12);
+				document.getElementById('today-minute').textContent = fillzero(now.getMinutes());
+				document.getElementById('today-second').textContent = fillzero(now.getSeconds()); 
+				today();
+			},200);
+		})();
+		
+		(function from() {
+			var from = new Date('2021-11-18');
+			document.getElementById('from-year').textContent = from.getFullYear();
+			document.getElementById('from-month').textContent = fillzero(from.getMonth() + 1);
+			document.getElementById('from-date').textContent = fillzero(from.getDate());
+			var weekname = ['일','월','화','수','목','금','토'];
+			document.getElementById('from-day').textContent = weekname[from.getDay()];
+			var ampm = from.getHours() < 12 ? 'AM' : 'PM';
+			document.getElementById('from-ampm').textContent = ampm;
+			document.getElementById('from-hour').textContent = fillzero(from.getHours() < 12 ? from.getHours() : from.getHours() - 12);
+			document.getElementById('from-minute').textContent = fillzero(from.getMinutes());
+			document.getElementById('from-second').textContent = fillzero(from.getSeconds());
+		})();
+		
+		(function remain() {
+			setTimeout(function(){
+				var from = new Date('2021-11-18');
+				var now = new Date();
+				var result = '';
+				var restTime = from.getTime() - now.getTime();
+				if (restTime <= 0) {
+					result = '입니다.';
+					return;
+				}
+				// 남은시간(밀리초) -> 일, 시, 분, 초
+				restTime = parseInt(restTime/1000);// restTime을 초 단위로 수정
+				var second = restTime % 60;
+				var minute = parseInt(restTime / 60) % 60;
+				var hour = parseInt(restTime / 3600) % 24;
+				var date = parseInt(restTime / 3600 / 24);
+				// 표시 결과 만들기
+				if(date > 0) result += (date + '일&nbsp;');
+				result += (fillzero(hour) + ':' + fillzero(minute) + ':' + fillzero(second));
+				document.getElementById('d-day').innerHTML = result;
+				if(date == 0) {
+					document.getElementById('d-day').style.color = 'red';
+				}
+				remain();
+			},200);
+		})();
+	</script>
+</body>
+</html>

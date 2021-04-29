@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Date</title>
+	<script>
+	// 	1. 현재 날짜와 시간
+		var now = new Date();
+		console.log('now=' + now);
+	//	2. 특정 날짜
+		var date1 = new Date(2021,3,29);			// Thu Apr 29 2021 00:00:00 GMT+0900 (대한민국 표준시)
+		var date2 = new Date(2021,3,29,10,40,30);	// Thu Apr 29 2021 10:40:30 GMT+0900 (대한민국 표준시)
+		var date3 = new Date('2021-04-29');			// Thu Apr 29 2021 09:00:00 GMT+0900 (대한민국 표준시)
+		console.log('date1=' + date1);
+		console.log('date2=' + date2);
+		console.log('date3=' + date3);
+	//  3. 년, 월, 일, 요일, 시, 분, 초
+		console.log('년=' + now.getFullYear());
+		console.log('월=' + (now.getMonth() + 1)); // 월(0~11)
+		console.log('일=' + now.getDate());
+		console.log('요일=' + now.getDay()); // 일:0, 월:1, ... , 토:6
+		console.log('시=' + now.getHours());
+		console.log('분=' + now.getMinutes());
+		console.log('초=' + now.getSeconds());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

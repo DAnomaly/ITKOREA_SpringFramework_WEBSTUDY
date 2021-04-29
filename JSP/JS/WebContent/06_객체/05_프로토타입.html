@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>프로토타입</title>
+	<script>
+		/*
+			프로토타입(prototype)
+			
+			1. 같은 타입의 모든 객체들이 공유하는 하나의 공간이다.
+			2. 공통 변수, 변수를 사용하지 않는 함수 등을 프로토타입에 저장하면 공간을 절약할 수 있다.
+			3. 접근 방식
+				1) 객체타입.prototype.프로퍼티 = 값
+				2) 객체타입.prototype.함수 = function(){}
+				3) 생성자 함수 내부에서 접근
+					this.__proto__.프로퍼티 = 값
+					this.__proto__.함수 = function(){}
+		*/
+		
+		// 1. 생성자 함수
+		function Product(name) {
+			name || (name = '');
+			this.name = name;
+			// this.company = '오뚜기'; // 모든 객체가 개별적으로 저장한다.(낭비)
+		}
+		
+		// 2. Product의 프로토타입에 company 저장
+		Product.prototype.company = '오뚜기'; // 모든 Product들이 공유
+		
+		// 3. 객체 생성
+		var p1 = new Product('3분카레');
+		var p2 = new Product('미트볼');
+		
+		// 4. 확인
+		console.log('제조사: ' + p1.company + ', 제품: ' + p1.name);
+		console.log('제조사: ' + p2.company + ', 제품: ' + p2.name);
+		
+		
+		// 1. 생성자 함수
+		function Korean(name) {
+			this.name = name;
+			this.__proto__.country = '대한민국';		// 함수 내부에서 프로토타입 선언 방법 , Korean.prototype.country = '대한민국';
+			this.__proto__.tourSlogan = function(){
+				console.log('Imagine your Korea!');
+			}
+		}
+		
+		// 2. 객체 생성
+		var k1 = new Korean('박지성');
+		var k2 = new Korean('손흥민');
+		
+		for (let p in k1) {
+			console.log(k1[p]);
+		}
+		for (let p in k2) {
+			console.log(k2[p]);
+		}
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>

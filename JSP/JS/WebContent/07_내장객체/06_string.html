@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>string</title>
+	<script>
+		var str = 'JavaScript';	
+	
+	// 	1. 길이
+		console.log(str.length);
+	
+	//	2. 문자 추출
+		console.log(str.charAt(0));
+	
+	// 	3. 문자열 추출
+		console.log(str.substring(4)); 		// 인덱스4부터 끝까지
+		console.log(str.substring(0,4));  	// 0 <= 추출범위 < 4
+		console.log(str.substr(4));			// 인덱스4부터 끝까지
+		console.log(str.substr(0,4));		// 인덱스0부터 4글자 가져오기
+		
+	//	4. 문자 찾기
+		console.log(str.indexOf('a'));		// 첫 번째 a의 인덱스 반환
+		console.log(str.lastIndexOf('a'));	// 마지막 a의 인덱스 반환
+		
+	//	5. 대소문자
+		console.log(str.toUpperCase());		// 대문자로 변환
+		console.log(str.toLowerCase());		// 소문자로 변환
+			
+	//	6. 문자 변환								
+		console.log(str.replace('java','ECMA'));// java를 ECMA로 수정
+		
+	//	7. 좌우 공백 제거
+		var str2 = '     JavaScript    ';
+		console.log(str2.trim()); 			// 좌우 공백 제거
+		console.log(str2.trimLeft());		// 왼쪽 공백 제거
+		console.log(str2.trimRight());		// 오른쪽 공백 제거
+		
+	//	8. 문자열 분리
+		var str3 = 'hello java script';
+		var arr = str3.split(' ');
+		console.log(arr);
+		
+	//	9. 분리된 문자열 이어 붙이기
+		var arr2 = ['hello','java','script'];
+		var str4 = arr2.join(' '); 			// ' '으로 문자열 이어 붙이기
+		console.log(str4);
+		var str5 = arr2.join(','); 			// ','으로 문자열 이어 붙이기
+		console.log(str5);
+	</script>
+	<script type="text/javascript">
+	//	[java의 replaceAll구현하기]
+	// 	replaceAll('javascript는 java와 다르다.','java','ECMA');
+	// 	ECMAscript는 ECMA와 다르다.
+		function replaceAll(str,before,after) {
+			// str.indexOf(before) : 찾는 문자열이 없으면 -1이 반환된다.
+			while(str.indexOf(before)!=-1){
+				str = str.replace(before,after);
+			}
+			return str;
+		}
+		console.log(replaceAll('javascript는 java와 다르다.','java','ECMA'));
+		function replaceAll(str,before,after) {
+			after || (after = '')
+			return str.split(before).join(after);
+		}
+		console.log(replaceAll('javascript는 java와 다르다.','java','ECMA'));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

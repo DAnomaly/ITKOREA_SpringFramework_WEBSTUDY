@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>내부함수</title>
+	<script type="text/javascript">
+	/*
+		내부 함수
+		1. function 내부에서 포함된 function을 의미한다.
+		2. function 내부에서만 호출할 수 있다.
+		3. 내부 함수를 외부로 반환할 수 있다.
+	*/
+	
+	//	<--TEST1-->
+	//	삼각형 넓이를 반환하는 getTriangleArea 함수
+	//	1. 내부 함수 : 너비와 높이를 곱한 결과를 반환
+	//	2. 외부 함수 : 내부 함수의 반환 결과를 2로 나눈 결과를 반환
+		function getTriangleArea(width,height) {
+			function multiplication(a,b) {
+				a || (a = 1);
+				b || (b = 1);
+				return a * b;
+			}	
+			return multiplication(width,height) / 2;
+		}
+	//	함수 결과 확인
+		var a = getTriangleArea(3,4);
+		console.log(a);
+	//	내부 함수는 호출할 수 없다
+	/*
+		var b = multiplication(3,4); // multiplication is not defined
+		console.log(b);
+	*/
+	
+	//	<-- TEST2 -->
+	//	원의 넓이를 반환하는 getCircleArea() 함수 구현
+	// 	1. 내부 함수 : 반지름의 제곱을 반환하는 함수
+	// 	2. 외부 함수 : 원의 넓이를 반환하는 함수
+		function getCircleArea(radius) {
+			function getSquare(a) {
+				a || (a = 0);
+				return a * a;
+			}
+			return getSquare(radius) * Math.PI;
+		}
+	//	함수 결과 확인
+		var a = getCircleArea(5);
+		console.log(a);
+	
+	//	<-- TEST3 -->
+	//	내부함수를 외부로 반환할 수 있다.
+		function outer() {
+			function inner() {
+				console.log('이름: 브레드, 나이: 10살');
+			}
+			return inner; // 내부 선언적 함수 자체를 반환
+		}
+	//  결과 확인
+	//  > 방법 1
+	/*
+		var f = outer();
+		f(); // f에는 inner() 함수가 저장되어 있으므로 함수 호출로 처리
+	*/
+	//	> 방법 2
+		outer()();
+	
+	//	<-- TEST4 -->
+	//	내부함수를 외부로 반환할 수 있다.
+		function outer2() {
+			return function (name,age) {
+				console.log('이름: ' + name + ', 나이: ' + age + '살');
+			}; // 내부 선언적 함수 자체를 반환
+		}
+	// 	결과 확인
+	//	> 방법 1
+	/*
+		var f = outer2();
+		f('곶감',4);
+	*/
+	// 	> 방법 2
+		outer2()('곶감',4);
+	
+	//	내부함수를 외부로 반환할 때는 
+	//	내부함수의 변수값이 외부에서도 유지된다. (스코프가 이상하다!)
+	
+	//	<-- TEST5 -->
+	//	일반적인 스코프 점검
+		function f() {
+			var a = 10; // 변수 a는 f를 벗어나면 접근할 수 없다.
+		}
+	//	alert(a); // 불가능
+	
+	//  <-- TEST6 -->
+	//	함수 내부의 변수를 외부에서도 접근할 수 있도록
+	//	변수를 내부함수에 담아서 내부함수를 리턴한다.
+		function outer3() {
+			function inner3() {
+				var b = 10;
+				console.log('inner3의 b: ' + b);
+			}
+			return inner3;
+		}
+	
+		outer3()();
+		
+	// 	클로저 (closure)
+	//	내부 함수를 반환 받는 영역에서 내부 함수의 변수값을 접근할 수 있음을 의미한다.
+		function outer4() {
+			var b = 10;
+			function inner4() {
+				console.log('outer4의 b: ' + b);
+			}
+			return inner4;
+		}
+		
+		outer4()(); // outer4에서 선언한 b를 호출!
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

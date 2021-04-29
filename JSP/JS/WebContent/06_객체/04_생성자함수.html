@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>생성자함수</title>
+	<script>
+	/*
+		생성자 함수
+		
+		1. 객체를 생성하는 함수이다.
+		2. 구조가 동일한 여러 객체를 생성할 때 유용하다.
+		3. 일반 함수와 구분하기 위해서 관례상 첫 글자를 대문자로 한다.
+		4. new 키워드를 통해서 호출한다.
+	*/
+	
+	// 1. 생성자 함수 정의
+	function Person(name,age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	// 2. 객체 생성
+	var person1 = new Person('브레드',10);
+	var person2 = new Person('초코', 5);
+	
+	// 3. 확인
+	console.log('이름',person1.name);
+	console.log('나이',person1.age);
+	console.log('이름',person2.name);
+	console.log('나이',person2.age);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

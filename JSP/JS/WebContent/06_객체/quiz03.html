@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quiz03</title>
+	<script type="text/javascript">
+		/*
+			생성자 함수 Student를 구현하시오.
+			1. 매개변수 : name, kor, eng, mat
+			2. 프로퍼티 : name, kor, eng, mat, getAverage, getGrade
+		*/
+		function Student(name,kor,eng,mat) {
+			this.name = name;
+			this.kor = Number(kor);
+			this.eng = Number(eng);
+			this.mat = Number(mat);
+			this.__proto__.getAverage = function(){
+				return (this.kor + this.eng + this.mat)/3;
+			};
+			this.__proto__.getGrade = function(){
+				var avg = this.__proto__.getAverage();
+				var grade = 'F';
+				switch (parseInt(avg/10)) {
+				case 10: case 9: grade = 'A'; break;
+				case 8: grade = 'B'; break;
+				case 7: grade = 'C'; break;
+				case 6: grade = 'D'; break;
+				}
+				return grade;
+			}
+		}
+	//	생성
+		var students = [
+			new Student('Kim',98,88,60),
+			new Student('Park',68,77,89),
+			new Student('Yee',70,86,98)
+		];
+	//	출력	
+		for (var i = 0; i < students.length; i++) {
+			with (students[i]) {
+				console.log('name',name);
+				console.log('kor',kor);
+				console.log('eng',eng);
+				console.log('mat',mat);
+				console.log('average',getAverage());
+				console.log('grade',getGrade());	
+			}
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
