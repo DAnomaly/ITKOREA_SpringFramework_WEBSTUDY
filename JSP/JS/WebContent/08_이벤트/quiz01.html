@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quiz01</title>
+	<script type="text/javascript">
+		// 페이지 로드 이벤트
+		onload = ()=>{
+			var hit = 0;
+			var count = document.getElementById('count');
+			count.textContent = hit;
+			var checkBtn = document.getElementById('check-btn');
+			// 1. 고전 이벤트
+			/*
+			checkBtn.onclick = function () {
+				hit++;
+				count.textContent = hit;				
+			}
+			*/
+			// 2. 표준 이벤트
+			/*
+			checkBtn.addEventListener('click',function () {
+				hit++;
+				count.textContent = hit;
+			});
+			*/
+		}
+		// 3. 인라인 이벤트
+		/*
+		// 내가 만든거
+		function f() {
+			var count = document.getElementById('count');
+			var hit = Number(count.textContent);
+			count.textContent = ++hit;	
+		}
+		*/
+		
+		function f() {
+			document.getElementById('count').textContent = countUp();
+		}
+		var countUp = function () { // 익명함수를 이용한 함수표현식
+			visitNo = 0; // 최초 접근시에만 사용되고 이후에는 클로저의 visitNo를 사용하게 된다.
+			return function () { // 내부함수의 변수는 클로저에서 처리된다.
+				visitNo++;
+				return visitNo;
+			}
+		}();
+		
+	</script>
+</head>
+<body>
+	<h1>방문자 카운트: <span id="count"></span>명</h1>
+	<input type="button" value="체크" id="check-btn" onclick="f()">
+</body>
+</html>

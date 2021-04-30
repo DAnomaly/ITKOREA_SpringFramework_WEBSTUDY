@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>이벤트객체</title>
+	<script type="text/javascript">
+		// 페이지 로드 이벤트
+		onload = function() {
+			
+			// box를 클릭하면 box의 텍스트가 생성되도록 이벤트 등록
+			
+			// 1. 고전 이벤트 모델
+			var box = document.getElementById('box');
+			/*
+			box.onclick = function(){
+				
+				// 이벤트 객체를 이벤트 리스너에서 호출하는 방법
+				// 1. 이벤트 리스너에서는 이벤트 객체를 this라고 한다.
+				this.textContent = '불렀어요?'; // this == box
+				
+			}
+			*/
+			box.onclick = function(event){
+				// 이벤트객체를 이벤트리스너에서 호출하는 방법
+				// 2. 이벤트가 발생하면 발생된 이벤트가 객체 형태로 생성된다.
+				// 발생된 이벤트를 이벤트 리스너에서 첫 번째 매개변수로 선언해서 사용할 수 있다.
+				console.log(event); // event 객체에는 target 프로퍼티가 있다.
+				event.target.textContent = '부르셨나요?';
+			}
+			
+			// 2. 표준 이벤트 모델
+			var box2 = document.getElementById('box2');
+			
+			// 1) this
+			box2.addEventListener('click',function(){ 
+				this.textContent = '부르셨습니까?';
+			});
+			
+			// 2) event
+			box2.addEventListener('click',function(event){
+				event.target.style.backgroundColor = 'yellow';
+			});
+		}
+		
+		// 3. 인라인 이벤트 모델
+		function f(box3) {
+			box3.textContent = "무슨용무?";
+		}
+		
+	</script>
+</head>
+<body>
+	<div id="box">클릭하기 전 BOX</div>
+	
+	<div id="box2">클릭하기 전 BOX</div>
+	
+	<div id="box3" onclick="f(this)">클릭하기 전 BOX</div>
+</body>
+</html>

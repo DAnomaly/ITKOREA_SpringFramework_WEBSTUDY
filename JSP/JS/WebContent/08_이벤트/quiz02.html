@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quiz02</title>
+	<script type="text/javascript">
+		// 메시지 보기 버튼을 클릭하면 fa(), fb()를 모두 순차적으로 동작시키시오.
+		function fa() {
+			alert('처음 뵙겠습니다.');
+		}
+		function fb() {
+			alert('만나서 반갑습니다.');
+		}
+		function fc() {
+			fa();
+			fb();
+		}
+		
+		onload = ()=>{
+			/*
+			// 1. 표준 이벤트 (가장 좋은 방법)
+			document.getElementById('message-btn').addEventListener('click',fa);
+			document.getElementById('message-btn').addEventListener('click',fb);
+			*/
+			
+			// 2. 고전 이벤트 (fa, fb 함수를 하나로 묶는다.)
+			document.getElementById('message-btn').onclick = fc;
+		}
+		
+	</script>
+</head>
+<body>
+	<input type="button" value="메시지 보기" id="message-btn">
+</body>
+</html>

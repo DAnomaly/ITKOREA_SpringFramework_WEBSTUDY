@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트개요</title>
+<script type="text/javascript">
+	/*
+		1. 이벤트 구성 요소
+			1) 이벤트 객체
+			2) 이벤트 이름
+			3) 이벤트 속성
+			4) 이벤트 리스너
+		
+		2. 이벤트 객체
+			: 이벤트가 연결되는 객체
+			
+		3. 이벤트 이름
+			: 이벤트의 종류를 의미
+			1) click
+			2) dblclick
+			3) focus : 포커스를 가졌을 때
+			4) blur : 포커스를 잃었을 때
+			5) load : 문서가 로드되면 (HTML문서를 다 읽었으면)
+			6) mouseover : 마우스가 올라가면
+			7) mouseout : 마우스가 나가면
+			8) keypress : 키를 누르고 있는 동안
+			9) keydown : 키가 내려갈 때 (입력이 완료되기 직전)
+			10) keyup : 키가 올라올 때 (입력이 완료된 직후)
+			11) submit : 폼의 요소를 전송할 때
+			
+		4. 이벤트 속성
+			: 이벤트를 실행시키는 속성 (on + 이벤트 이름)
+			onclick, ondblclick, onfocus, onblur, onload , ... , onkeyup
+			
+		5. 이벤트 리스너
+			: 이벤트가 동작시키는 함수
+			function f(){}, function (){}, () => {}
+	*/
+	/*
+		이벤트 사용 예시 (고전 이벤트 모델)
+		
+		이벤트객체.이벤트속성 = 이벤트리스너
+		
+		1) 선언적 함수
+		function f() { }
+		window.onload = f;
+		
+		2) 익명 함수
+		window.onload = function (){}
+		window.onload = () => {}	
+	*/
+	/*
+		이벤트 모델의 종류
+		
+		1. 고전 이벤트 모델 : 하나의 이벤트 리스너만 연결할 수 있다.
+		
+		<div id="box"></div>
+		document.getElementById('box').onclick = function(){};
+		
+		2. 인라인 이벤트 모델
+		
+		function f(){}
+		<div id="box" onclick="f()"></div>
+		
+		3. 표준 이벤트 모델 : 여러 개의 이벤트 리스너를 연결할 수 있다.
+		
+		<div id="box"></div>
+		document.getElementById('box').addEventListener('click',function(){});
+		document.getElementById('box').addEventListener('dblclick',function(){});
+	*/
+</script>
+</head>
+<body>
+
+</body>
+</html>

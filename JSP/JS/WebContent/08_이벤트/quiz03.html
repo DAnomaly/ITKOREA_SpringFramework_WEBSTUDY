@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quiz03</title>
+	<script>
+		// 난수 만들기 버튼을 클릭하면 0~9 사이의 난수가 출력된다.
+		onload = () => {
+			document.getElementById('random-btn').addEventListener('click',function () {
+				document.getElementById('random-box').textContent = randomNum(0,9);
+			});
+			
+			// 이미지 변경하기 버튼을 클릭하면 순차적으로 이미지가 변경된다.
+			var imageNames = ['fruit1.jpg','fruit2.jpg','fruit3.jpg'];
+			var i = 1;
+			document.getElementById('image-btn').addEventListener('click',function () {
+				document.getElementById('image-box').style.backgroundImage = 'url("../images/' + imageNames[i++] + '")';
+				if( i >= 3 ){ 
+					i = 0;
+				}
+			});
+			
+			// 이미지 변경하기 버튼을 클릭하면 
+			var imageNames = ['fruit1.jpg','fruit2.jpg','fruit3.jpg'];
+			var imageTag = document.createElement('img');
+			document.getElementById('image-box2').appendChild(imageTag);
+			imageTag.setAttribute('src','../images/fruit1.jpg');
+			document.getElementById('image-btn2').addEventListener('click',function () {
+				imageTag.setAttribute('src','../images/'+ imageNames[randomNum(0,2)]);
+			});
+		}
+		
+		function randomNum(min,max){
+			return parseInt(Math.random() * (max - min + 1) + min);
+		}
+	
+		
+	</script>
+	<style>
+		#image-box {
+			width: 300px;
+			height: 300px;
+			background-image: url('../images/fruit1.jpg');
+			background-size: 300px 300px; 
+			border-radius: 20px;
+		}
+		img {
+			width: 300px;
+			height: 300px;
+		}
+	</style>
+	
+</head>
+<body>
+	<input type="button" value="난수 만들기" id="random-btn">
+	<div id="random-box"></div>
+	<input type="button" value="이미지 변경하기" id="image-btn">
+	<div id="image-box"></div>
+	<input type="button" value="이미지 변경하기2" id="image-btn2">
+	<div id="image-box2"></div>
+	</body>
+</html>
