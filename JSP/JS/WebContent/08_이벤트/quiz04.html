@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quiz04</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		#container {
+			margin: 0 auto;
+			width: 640px;
+			border: 1px solid black;
+		}
+		#image-box {
+			padding: 10px;
+			widtH: 100%;
+		}
+		#image {
+			width: 100%;
+			height: 420px;
+		}
+		#nav-box {
+			width: 120px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;			
+		}
+		#prev, #image-no, #next {
+			width: 40px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+		}
+		#prev:active,  #next:active {
+			color: red;
+		}
+		#prev:hover,  #next:hover {
+			cursor: pointer;
+		}
+	</style>
+	<script type="text/javascript">
+		onload = function () {
+			var images = ['apple.jpg','cat.jpg','frog.jpg','dog.jpg','eagle.jpg','fruit1.jpg','fruit2.jpg','fruit3.jpg'];
+			var image_idx = 0;
+			var image_no = document.getElementById('image-no');
+			changeImageNo();
+			
+			document.getElementById('prev').addEventListener('click', function () {updateImage(-1);});
+			document.getElementById('next').addEventListener('click', function () {updateImage(1);});
+			
+			function updateImage(n){
+				image_idx += n;
+				if( image_idx >= images.length ){
+					image_idx = 0;
+				}
+				if( image_idx < 0 ){
+					image_idx = images.length - 1;
+				}
+				document.getElementById('image').setAttribute('src','../images/' + images[image_idx]);
+				changeImageNo();
+			}
+			
+			function changeImageNo(){
+				image_no.textContent = (image_idx + 1) + ' / ' + images.length; // 1 / 8
+			}
+		}
+	
+	</script>
+</head>
+<body>
+	<div id="container" ondragstart="return false" onselectstart="return false">
+		<!-- 이미지 -->
+		<div id="image-box">
+			<img src="../images/apple.jpg" id="image">
+		</div>
+		<!-- 번호 -->
+		<div id="nav-box">
+			<div id="prev"><i class="fas fa-backward"></i></div>
+			<div id="image-no"></div>
+			<div id="next"><i class="fas fa-forward"></i></div>
+		</div>	
+	</div>
+</body>
+</html>

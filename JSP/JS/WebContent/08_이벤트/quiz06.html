@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quiz06</title>
+	<style>
+		ul {
+			position: relative;
+			list-style: none;
+			width: 600px;
+		}
+		li {
+			margin: 4px;
+			padding: 3px 3px 3px 10px; 
+			background-color: gray;
+			color: white;
+		}
+		li:hover {
+			cursor: pointer;
+		}
+		li::before {
+			position: absolute;
+			left: 20px;
+			display: inline-block;
+			width: 0.5em;
+			height: 1em;
+			border-width: 0 3px 3px 0;
+			border-color: limegreen;
+			border-style: solid;
+			transform: rotate(45deg);
+			content: ' '; 
+			visibility: hidden; 
+		}
+		
+		li[class="choice"]::before {
+			visibility: visible;
+		}
+		
+	</style>
+	<script type="text/javascript">
+		onload = function(){
+			var ul = document.getElementById('list');
+			// var ul = document.querySelector('ul'); // 첫 번째 ul만
+			// var ul = document.querySelectorAll('ul'); // 모든 ul들
+			ul.addEventListener('click',function(event){
+				if (event.target.tagName == 'LI') {
+					event.target.classList.toggle('choice'); // <li class="choice"> <-> <li class> 바꿔준다. 
+				}
+			}); 
+		}
+	</script>
+</head>
+<body>
+	<h3>주말에 해야 할 일</h3>
+	<ul id="list">
+		<li>마트에서 장보기</li>
+		<li>어린이날 선물사기</li>
+		<li>수업하기</li>
+		<li>새로운 개시글 올리기</li>		
+		<li>방청소 하기</li>		
+	</ul>
+</body>
+</html>

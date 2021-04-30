@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quiz07</title>
+	<script>
+		onload = () => {
+			var thumbnails = document.getElementsByClassName('thumbnail');
+			// var thumbnails = document.querySelectorAll('.thumbnail');
+			for (let i = 0; i < thumbnails.length; i++) {
+				thumbnails[i].addEventListener('click',function(){
+					// data-img 속성 값을 저장하고 있는 이벤트 객체 : this
+					// this.getAttribute('data-img')
+					// this.dataset.img
+					document.getElementById('large-image').setAttribute('src',this.dataset.img);
+				})
+			}
+		}
+	</script>
+	<style>
+		#container {
+			margin: 0 auto;
+			width: 640px;
+		}
+		section {
+			width: 100%;
+		}
+		#large-image {
+			width: 100%;
+		}
+		header > h1 {
+			text-align: center;
+		}
+		ul {
+			margin: 0;
+			padding: 0; 
+			list-style: none;
+			display: flex;
+			justify-content: center;
+		}
+		li img {
+			margin: 5px 10px;
+		}
+		.thumbnail {
+			width: 50px;
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<header>
+			<h1>썸네일 이미지를 선택하면 큰 이미지로 나타납니다.</h1>
+		</header>
+		<section>
+			<img src="../images/fruit1.jpg" id="large-image">
+		</section>
+		<ul>
+			<li><img src="../images/fruit1.jpg" class="thumbnail" data-img="../images/fruit1.jpg"></li>
+			<li><img src="../images/fruit2.jpg" class="thumbnail" data-img="../images/fruit2.jpg"></li>
+			<li><img src="../images/fruit3.jpg" class="thumbnail" data-img="../images/fruit3.jpg"></li>
+		</ul>
+	</div>
+</body>
+</html>

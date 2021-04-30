@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quiz05</title>
+	<script type="text/javascript">
+		onload = () => {
+			document.getElementById('ans-btn').addEventListener('click',checkAns);
+			document.getElementById('ans-btn').setAttribute('value','정답 보기');
+			document.getElementById('ans-span').style.visibility = 'hidden';
+		}
+		
+		function checkAns() {
+			if(document.getElementById('ans-btn').getAttribute('value') == '정답 보기') {
+				document.getElementById('ans-btn').setAttribute('value','정답 숨기기');
+				document.getElementById('ans-span').style.visibility = 'visible';
+			} else {
+				document.getElementById('ans-btn').setAttribute('value','정답 보기');
+				document.getElementById('ans-span').style.visibility = 'hidden';
+			}
+		}
+	</script>
+	<style>
+		footer p {
+			margin : 0px;
+			padding: 0px;
+			float: left;
+		} 
+		footer p:first-of-type {
+			width: 120px;
+		}
+	</style>
+</head>
+<body>
+	<article id = "container">
+		<header>
+			<h3>다음 중 존재하지 않는 태그는?</h3>
+		</header>
+		<section>
+			<ol>
+				<li>div</li>
+				<li>p</li>
+				<li>mother</li>
+				<li>ul</li>
+			</ol>
+		</section>
+		<footer>
+			<p>정답 보기: [&nbsp<span id="ans-span">3</span>&nbsp;]&nbsp;</p>
+			<p><input type="button" id="ans-btn" value="정답 보기"></p>
+		</footer>
+	</article>
+</body>
+</html>
