@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>정규표현식</title>
+	<script>
+		onload = () => {
+			var btn = document.getElementById('reg-btn');
+			btn.addEventListener('click',function() {
+				var q = document.forms.f.q;
+				var content = q.value;
+				var regID = /^[a-z0-9][a-z0-9_-]{4,19}$/;
+				// 1. 문자열에서 지원하는 함수
+				
+				// 1) match() 함수
+				//		(1) 문자열.match(정규식)
+				//		(2) 일치하는 문자열을 배열로 반환, 일치하지 않으면 null 반환
+				if(content.match(regID) == null) {
+					alert('사용할 수 없는 아이디입니다.');
+				} else {
+					alert('멋진 아이디입니다');
+				}
+				
+				// 2) search() 함수
+				//		(1) 문자열.search(정규식)
+				//		(2) 일치하는 문자열의 인덱스를 반환, 일치하지 않으면 -1 반환
+				if(content.search(regID) == -1) {
+					alert('사용할 수 없는 아이디입니다.');
+				} else {
+					alert('멋진 아이디입니다');
+				}
+				
+				// 2. 정규식에서 지원하는 함수
+				
+				// 1) exec() 함수	
+				//		(1) 정규식.exec(문자열)
+				//		(2) 일치하는 문자열을 배열로 반환, 일치하지 않으면 null 반환
+				if(regID.exec(content) == null) {
+					alert('사용할 수 없는 아이디입니다.');
+				} else {
+					alert('멋진 아이디입니다');
+				}
+				
+				// 2) test() 함수
+				//		(1) 정규식.test(문자열)
+				//		(2) 일치하는 문자열이 있으면 true 반환, 일치하지 않으면 false 반환
+				if(!regID.test(content)) {
+					alert('사용할 수 없는 아이디입니다.');
+				} else {
+					alert('멋진 아이디입니다');
+				}
+			});
+			
+			var text = document.forms.f.q;
+			text.addEventListener('blur',function () {
+				var regID = /^[a-z0-9][a-z0-9_-]{4,19}$/;
+				var chk_id = document.getElementById('chk-id');
+				if(!regID.test(this.value)){
+					chk_id.textContent = '사용할 수 없는 아이디입니다.';
+				} else {
+					chk_id.textContent = '멋진 아이디입니다.'
+				}
+			});
+			
+		};
+	
+	</script>
+</head>
+<body>
+	<form name="f" action="javascript:void(0)">
+		<h3>정규식 검사하기</h3>
+		<input type="text" name="q">
+		<input type="button" value="검사" id="reg-btn">
+		<p id="chk-id"></p>
+	</form>
+</body>
+</html>

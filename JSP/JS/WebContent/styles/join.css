@@ -1,0 +1,169 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+      html {
+        font-size: 15px;
+        background-color: #f5f6f7;
+        font-family: Dotum, '돋움', Helvetica, sans-serif;
+      }
+      input {
+        font-size: 15px;
+        border: 0;
+        outline: none;
+      }
+      h3 {
+        padding : 16px 0 8px;
+        font-weight: bold;
+      }
+      h3 > span {
+        font-size: 12px;
+        font-weight: normal;
+      }
+      .join_row select {
+        font-size: 15px;
+        width: 430px;
+        height: 29px;
+        border: 0;
+        outline: none;
+      }
+      .container {
+        width: 768px;
+        margin: 0 auto;
+      }
+      header {
+        width: 100%;        
+        height: 124px;
+        padding: 60px 0 20px;
+        box-sizing: border-box;
+      }
+      header > h1{
+        font-size: 44px;
+        text-align: center;
+        font-family: 'Black Han Sans', sans-serif;
+        color: #03C75A;
+      }
+      section {
+        margin: 0 auto;
+        width: 460px;
+      }
+      .ps_box {
+        display: block;
+        position: relative;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        padding: 10px 14px 10px 14px;
+        border: 1px solid #d3d3d3;
+        
+      }
+      .ps_box input[type] {
+        width: 220px;
+        height: 29px;
+      }
+      input ~ span.setp_url {
+        position: absolute;
+        top: 18px;
+        right: 14px;
+        color: 8e8e8e;
+      }
+      .row_group {
+        margin: 15px 0; 
+      }
+      .bir_wrap {
+        display: flex;
+      }
+      .bir_wrap input[type] {
+        width: 100px;
+        margin-right: 6px;
+      }
+      .bir_wrap select {
+        font-size: 15px;
+        border: 0;
+        outline: none;
+        width: 100px;
+        height: 29px;
+        margin-right: 10px;
+      }
+      .bir_wrap .ps_box {
+        margin-left: 20px;
+      }
+      .bir_wrap label[for="year"] .ps_box {
+        margin-left: 0;
+      }
+      #phone_div {
+        display: flex;
+        margin: 10px 0;
+      }
+      #phone_div span {
+        width: 335px;
+        height: 51px;
+        box-sizing: border-box;
+        margin-right: 10px;
+      }
+      #phone_div button {
+        background-color: #03C75A;
+        border: 1px solid #d3d3d3;
+        outline: none;
+        color: white;
+        height: 51px;
+        width: 115px;
+        box-sizing: border-box;
+        font-size: 15px;
+      }
+      #chk_phone {
+        background: none;
+      }
+      #chk_phone_box {
+        background: none;
+      }
+      #submit_button {
+        margin-top: 30px;
+        width:460px;
+        height: 53px;
+        color: white;
+        background-color: #03C75A;
+        border: 1px solid #d3d3d3;
+        outline: none;
+        box-sizing: border-box;
+        font-size: 18px;
+      }
+      
+	footer {
+	  margin-top: 40px;
+	  padding: 30px;
+	  padding-bottom: 10px;
+	  font-size: 14px;
+	  text-align: center;
+	}
+	footer a {
+	  color: #6c6c6c;
+	  text-decoration: none;
+	}
+	footer ul {
+	  list-style-type: none;
+	  display: flex;
+	  justify-content: center;
+	  margin: auto;
+	}
+	footer ul li {
+	  padding: 0 4px;
+	  border-right: 1px solid #dbdbdb;
+	}
+	footer ul li:last-of-type {
+	  border-right: 0;
+	}
+	/*© NAVER Corp.*/
+	footer strong {
+	  font-weight: bold;
+	}
+	footer p {
+	  font-size: 13px;
+	}
+	footer p a:first-of-type {
+	  font-family: 'Black Han Sans', sans-serif;
+	  color:limegreen;
+	}
+	
+	.chk-p {
+		padding: 5px;
+		font-size: 12px;
+		color: red;
+	}
