@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>submit</title>
+	<script type="text/javascript">
+		/* form : f1 */
+		function fn_search1(){
+			var f1 = document.forms.f1;
+			var q1 = f1.q1;
+			if (q1.value == '') {
+				alert('검색어를 입력하세요.');
+				q1.focus();
+				return; // 함수를 종료한다.
+			}
+			f1.submit();
+		}
+	
+		/* form : f2 */
+		function fn_search2(f) {
+			var q2 = f.q2;
+			if (q2.value == '') {
+				alert('검색어를 입력하세요.');
+				q2.focus();
+				return;	// 함수를 종료한다.
+			}
+			f.action = 'index.html';
+			f.submit();
+		}
+		
+		/* 엔터 사용 방지 코드 */
+		document.addEventListener('keydown', function(event) {
+			  if (event.keyCode === 13) {
+			    event.preventDefault();
+			  };
+			}, true);
+	</script>
+</head>
+<body>
+	<!-- 이와 같은 방식을 사용할 경우 엔터 사용을 막아야 한다. -->
+	
+	<!-- form : q1 -->
+	<form name="f1" action="index.html">
+		<input type="text" name="q1">
+		<br><br>
+		<input type="button" value="검색" onclick="fn_search1()"> <!-- 아무일도 안하는 버튼에 onclick 부여 -->
+	</form>
+	
+	<hr>
+	<!-- form : q2 -->
+	<form>
+		<input type="text" name="q2">
+		<br><br>
+		<input type="button" value="검색" onclick="fn_search2(this.form)"> <!-- this.form : button이 위치한 form -->
+	</form>
+	
+</body>
+</html>

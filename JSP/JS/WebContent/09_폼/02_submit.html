@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>submit</title>
+	<script>
+		onload = () => {
+			var f = document.forms.f;
+			var q = f.q;
+			f.addEventListener('submit',function (evt) { // 검색어가 비어 있으면 submit을 막는다
+				if( q.value == '') {
+					alert('검색어를 입력하세요.')
+					q.focus();
+					event.preventDefault();
+					return false;
+				}
+				alert(q.value);
+			});
+			
+		}
+	</script>
+</head>
+<body>
+	<form name="f" action="#">
+		<input type="text" name="q">
+		<br><br>
+		<button>검색</button>
+	</form>
+</body>
+</html>

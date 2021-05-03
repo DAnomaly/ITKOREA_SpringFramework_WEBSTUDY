@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>submit</title>
+	<script type="text/javascript">
+		function fn_search() {
+			var f = document.forms.f;
+			var q = f.q;
+			if(q.value == '') {
+				alert('검색어를 입력하세요');
+				q.focus();
+				return false;
+			}
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<form name="f" onsubmit="return fn_search()">
+		<input type="text" name="q">
+		<br><br>
+		<button>검색</button>
+	</form>
+</body>
+</html>

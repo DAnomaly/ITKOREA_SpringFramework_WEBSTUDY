@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>submit</title>
+</head>
+<body>
+	<!-- 
+		submit
+		폼 내부의 모든 입력 요소들을 폼의 action 속성에 지정한 곳으로 보내는 것
+	 -->
+	<form id="form" name="f" action="index.html">
+		<input type="text" id="query" name="q" value="기본값"><br>
+		<button>검색</button> <!-- button 태그 역할 : submit -->
+	</form>
+	
+	<script>
+		// 1. <form id="form"><input id="query">
+		//	   var f = doucment.getElementById('form');
+		var form = document.getElementById('form');
+		var query = document.getElementById('query');
+		
+		// 1) 고전 이벤트
+		/*
+		form.onsubmit = function () {
+			
+		};
+		*/
+		// 2) 표준 이벤트
+		form.addEventListener('submit',function (event) {	// event : submit에 대한 정보
+			// value의 속성값 알아내기
+			// 1) query.getAttribute('value')
+			// 2) query.value
+			// alert(query.value); 	
+			if(query.value == '') {
+				console.log(event);
+				alert('검색어를 입력하세요');
+				query.focus();					// 커서를 옮깁니다
+				// event.defaultPrevented = true;
+				event.preventDefault();			// 자동으로 submit();되는 것을 막습니다.
+				return false;					// function을 마칩니다 (submit을 막습니다)
+			}
+		});
+		
+		// 2. <form name="form"><input name="q">
+		//	1) var f = document.forms.f;
+		//  2) var f = document.forms['f'];
+		var form2 = document.forms.f;
+		var q = form2.q;  // var q = form2['q'];
+	</script>
+	
+	<script>
+		// <개인적으로 궁금해서 찾아본 내용>
+	
+		// input 타입 클릭시 모든 내용 선택
+		// 1) 
+		document.getElementById('query').addEventListener('click',function () {
+			this.select();
+		});
+		// 2) body input에 적용 onfocus="this.select()"
+		/* <input type="text" id="query" onfocus="this.select()" value="기본값"> */
+	</script>
+	
+</body>
+</html>
