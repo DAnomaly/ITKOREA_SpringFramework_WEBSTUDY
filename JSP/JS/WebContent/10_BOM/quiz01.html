@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function formAction() {
+		var loc_site = document.forms.select_form.loc_site;
+		if(loc_site.value == ''){
+			alert('이동할 사이트를 선택해 주세요.');
+			loc_site.focus();
+			return;
+		}
+		// 새 창으로 사이트 이동
+		open(loc_site.value);
+		// 기존 창으로 사이트 이동
+		// location.href = loc_site.value;
+	}
+</script>
+</head>
+<body>
+	<form name="select_form" action="javascript:formAction()">
+		<select name="loc_site">
+			<option value="">이동할 사이트 선택</option>
+			<option value="https://www.naver.com">네이버</option>
+			<option value="https://www.google.com">구글</option>
+			<option value="https://www.kakaocorp.com">카카오</option>
+			<option value="https://www.daum.net">다음</option>
+		</select>
+		<button>이동</button>
+	</form>
+</body>
+</html>

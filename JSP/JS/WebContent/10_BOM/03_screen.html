@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>screen</title>
+	<script>
+		
+		console.log('화면 너비: ', screen.width);
+		console.log('화면 높이: ', screen.height);
+		
+		console.log('실제 너비: ', screen.availWidth);
+		console.log('실제 높이: ', screen.availHeight);
+		
+		// 화면의 정중앙에 창을 열기
+		var winWidth = 640;
+		var winHeight = 480;
+		var myLeft = (screen.availWidth - winWidth) / 2;
+		var myTop = (screen.availHeight - winHeight) / 2;
+		open('','','width='+ winWidth +', height=' + winHeight + ', top=' + myTop + ', left=' + myLeft);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

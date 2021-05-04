@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>checkbox</title>
+<script type="text/javascript">
+	onload = () => {
+		var chk_all = document.getElementById('chk_all');
+		var chkArr = document.getElementsByClassName('chk');
+		
+		chk_all.addEventListener('click',fn_chk_all);
+		
+		function fn_chk_all () {
+			if(chk_all.checked){
+				for (var i = 0; i < chkArr.length; i++) {
+					chkArr[i].checked = true;
+				}
+			} else {
+				for (var i = 0; i < chkArr.length; i++) {
+					chkArr[i].checked = false;
+				}
+			}
+		}
+		
+		for (var i = 0; i < chkArr.length; i++) {
+			chkArr[i].addEventListener('click',fn_chk);
+		}
+		
+		function fn_chk (){
+			for (var i = 0; i < chkArr.length; i++) {
+				if(chkArr[i].checked == false){
+					chk_all.checked = false;
+					return;
+				}
+			}
+			chk_all.checked = true;
+		}
+		
+	};
+</script>
+</head>
+<body>
+	<input type="checkbox" id="chk_all">
+	<label for="chk_all">모두 동의합니다.</label>
+	<br><br>
+	<input type="checkbox" id="service" class="chk">
+	<label for="service">이용약관 동의</label>
+	<br>
+	<input type="checkbox" id="privacy" class="chk">
+	<label for="privacy">개인정보 수집 및 활용 동의</label>
+	<br>
+	<input type="checkbox" id="location" class="chk">
+	<label for="location">위치정보 이용약관 동의</label>
+	<br>	
+	<input type="checkbox" id="promotion" class="chk">
+	<label for="promotion">프로모션 정보 수신 동의</label>	
+</body>
+</html>

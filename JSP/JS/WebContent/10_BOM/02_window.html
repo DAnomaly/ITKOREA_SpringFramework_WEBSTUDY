@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>window</title>
+	<script>
+		
+	// 1. 새 창 열기
+	//    1) open('URL','name','spec');
+	//	  2) 'URL' : 생략하면 비어 있는 창, 열어 줄 파일의 경로를 작성한다.
+	//	  3) 'name' : 열어 줄 창의 name을 작성한다.
+	//	  4) 'spec' : width, height, top, left, bottom, right, resizable 등
+	
+	/*
+	// 팝업 처리
+	var isBlocked = false;
+	try {
+		var blankWindow = open('','','width=640, height=480, top=300, left=300, resizable=no'); // spec의 단위는 픽셀(px)
+		if( blankWindow == null ) {
+			isBlocked = true;
+		}
+	} catch (e) {
+		isBlocked = true; 
+	}
+	if (isBlocked) { 
+		alert('팝업 차단을 해제해 주세요.');
+	}
+	*/
+	
+	</script>
+</head>
+<body>
+	<h3>부모창</h3>
+	<form name="parent_form">
+		<input type="button" id="open_btn" value="팝업창열기"><br><br>
+		<input type="text" id="parent_input" name="parent_input" placeholder="자식창에 전달할 값">
+		<input type="button" id="send_btn" value="전달">
+	</form>
+	<script type="text/javascript">
+		// 기존 창 객체는 전역변수로 선언해 둔다.
+		var childWindow;
+	
+		// 2. 기존 창 열기
+		function openChild() {
+			childWindow = window.open('popup.html','','width=640,height=480,resizable=no');
+		}
+		
+		// 3. open_btn에 이벤트 설정
+		document.getElementById('open_btn').addEventListener('click',openChild);
+		
+		// 4. 자식 창으로 데이터 보내기
+		function sendToChild() {
+			var input = document.getElementById('parent_input');
+			var input = document.forms.parent_form.parent_input;
+			// 자식창 : childWindow
+			// 자식창의 폼 : childWindow.document.forms
+			childWindow.document.forms.child_form.child_input.value = input.value;
+		}
+		
+		// 5. send  
+		document.getElementById('send_btn').onclick = sendToChild; 
+	</script>
+</body>
+</html>
