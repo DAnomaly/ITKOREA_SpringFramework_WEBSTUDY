@@ -1,0 +1,14 @@
+{
+	"model":"520d",
+	"price":7600,
+	"mDate":"2021-03-05",
+	"company":{
+		"name":"bmw",
+		"country":"germany"
+	},
+	"option":[
+		"HUD",
+		"Advanced Cruise",
+		"AutoHold"
+	]
+}

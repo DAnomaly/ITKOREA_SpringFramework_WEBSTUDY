@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JSONReader</title>
+	<script>
+		onload = function() {
+			document.getElementById('get_btn').addEventListener('click',getCar);
+		}
+		function getCar() {
+			var request = new XMLHttpRequest();
+			request.open('get','data.json',true);
+			request.send();
+			
+			request.onreadystatechange = function () {
+				if(request.readyState == 4 && request.status == 200){
+					var resText = JSON.parse(request.responseText);
+					var ul = document.getElementById('receive');
+					// model
+					var li = document.createElement('li');
+					li.textContent = resText.model;
+					ul.appendChild(li);
+					// price
+					var li = document.createElement('li');
+					li.textContent = resText.price;
+					ul.appendChild(li);
+					// mDate
+					var li = document.createElement('li');
+					li.textContent = resText.mDate;
+					ul.appendChild(li);
+					// company
+					var li = document.createElement('li');
+					li.textContent = 'company';
+					var s_ul = document.createElement('ul');
+					li.appendChild(s_ul);
+					ul.appendChild(li);
+					var company = resText.company;
+					// for in company
+					for ( var el in company) {
+						var li = document.createElement('li');
+						li.textContent = company[el]; 
+						s_ul.appendChild(li);
+					}
+					// option
+					var li = document.createElement('li');
+					li.textContent = 'option';
+					var s_ul = document.createElement('ul');
+					li.appendChild(s_ul);
+					ul.appendChild(li);
+					// for option
+					for (var i = 0; i < resText.option.length; i++) {
+						var li = document.createElement('li');
+						li.textContent = resText.option[i]; 
+						s_ul.appendChild(li);
+					}
+				}
+			}
+		}
+		
+	</script>
+</head>
+<body>
+	<input type="button" value="자동차 정보 가져오기" id="get_btn">
+	<br><br>
+	<ul id="receive"></ul>
+</body>
+</html>

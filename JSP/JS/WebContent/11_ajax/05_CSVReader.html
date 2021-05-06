@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSVReader</title>
+	<script type="text/javascript">
+		onload = function () {
+			var request = new XMLHttpRequest();
+			request.open('get','data.csv',true);
+			request.send();
+			
+			request.onreadystatechange = function () {
+				if(request.readyState == 4 && request.status == 200){
+					console.log(request);
+					var resText = request.responseText;
+					var items = resText.split(',');
+					
+					var ul = document.createElement('ul');
+					document.getElementById('receive').appendChild(ul);
+					for (var i = 0; i < items.length; i++) {
+						var li = document.createElement('li');
+						li.textContent = items[i];
+						ul.appendChild(li);
+					}
+				}
+			}
+			
+		};
+	
+	</script>
+</head>
+<body>
+	<div id="receive"></div>
+</body>
+</html>
