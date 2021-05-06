@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quiz01</title>
+	<script>
+		var request = new XMLHttpRequest();
+		
+		request.open('get','quiz01.xml',true);
+		request.send();
+		
+		request.onreadystatechange = function () {
+			if(request.readyState == 4 && request.status == 200){
+				var resXML = request.responseXML;
+				
+				var persons = resXML.getElementsByTagName('person');
+				console.log(persons);
+				var tbody = document.getElementById('receive');
+				for (var i = 0; i < persons.length; i++) {
+					var tr = document.createElement('tr');
+					for (var j = 0; j < persons[i].children.length; j++) {
+						var td = document.createElement('td');
+						td.textContent = persons[i].children[j].textContent;
+						tr.appendChild(td);
+					}
+					tbody.appendChild(tr);
+				}
+			}
+		}
+		
+		
+		</script>
+</head>
+<body>
+	<table border = "1">
+		<thead>
+		<tr>
+			<th>이름</th>
+			<th>나이</th>
+			<th>주소</th>
+			<th>연락처</th>
+		</tr>
+		</thead>
+		<tbody id="receive"></tbody>
+	</table>
+</body>
+</html>

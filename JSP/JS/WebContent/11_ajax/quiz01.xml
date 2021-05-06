@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<people>
+	<person>
+		<name>제시카</name>
+		<age>30</age>
+		<address>서울시 마포구</address>
+		<tel>010-1234-5678</tel>
+	</person>
+	<person>
+		<name>니콜라스</name>
+		<age>21</age>
+		<address>인천시 부평구</address>
+		<tel>010-5678-8765</tel>
+	</person>
+	<person>
+		<name>론</name>
+		<age>32</age>
+		<address>경기도 과천시</address>
+		<tel>010-3333-4444</tel>
+	</person>
+</people>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>XMLHttpRequest</title>
+	<script>
+		/*
+			XMLHttpRequest
+			
+			1. ajax 통신을 처리하는 자바스크립트 객체이다.
+			2. new XMLHttpRequest()를 통해서 객체를 생성한다.
+		*/
+		
+		onload = () => {
+			
+			// 1. XMLHttpRequest 객체 생성
+			var request = new XMLHttpRequest();
+			
+			// 2. open()
+			//    open(전송방식,전송데이터,동기/비동기);
+			//    1) 전송방식 : get, post
+			//    2) 전송데이터 : 서버가 보내주는 데이터
+			//    3) 동기/비동기 : 동기(false), 비동기(true)
+			request.open('get','data.txt',false); // 동기 통신
+			
+			// 3. send()
+			//    서버에게 정보 요청
+			request.send();
+			
+			// 서버가 응답할때까지 가만히 기다리면 된다. (추가 코드 작성이 필요하지 않다.)
+			
+			// 서버의 응답 데이터 (responseText)
+			document.getElementById('receive').textContent = request.responseText;
+			
+		};
+	
+	</script>
+</head>
+<body>
+	<h1>서버가 보내준 데이터</h1>
+	<div id="receive"></div>
+</body>
+</html>

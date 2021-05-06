@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quiz02</title>
+	<script>
+		var request = new XMLHttpRequest();
+		request.open('get','quiz02.xml',true);
+		request.send();
+		
+		request.onreadystatechange = function () {
+			if(request.readyState == 4 && request.status == 200){
+				var resXML = request.responseXML;
+				
+				var items = resXML.getElementsByTagName('item');
+				var item_tag = ['title','description','link','pubDate'];
+
+				var tbody = document.getElementById('receive');
+				for (var i = 0; i < items.length; i++) {
+					var tr = document.createElement('tr');
+					for (var j = 0; j < item_tag.length; j++) {
+						var content = items[i].getElementsByTagName(item_tag[j])[0].innerHTML;
+						var td = document.createElement('td');
+						switch (j) {
+						case 2:
+							var a = document.createElement('a');
+							a.setAttribute('href',content);
+							a.textContent = '링크';
+							td.appendChild(a);
+							break;
+						default:
+							td.innerHTML = content;
+							break;
+						}
+						tr.appendChild(td);
+					}
+					tbody.appendChild(tr);
+				}
+				
+			}
+		}
+		
+		function fn_replaceAll(str,before,after) {
+			after || (after = '')
+			return str.split(before).join(after);
+		}
+	</script>
+</head>
+<body>
+	<table border = "1">
+		<thead>
+		<tr>
+			<td>제목</td>
+			<td>내용</td>
+			<td>링크</td>
+			<td>작성일</td>
+		</tr>
+		</thead>
+		<tbody id="receive"></tbody>
+	</table>
+</body>
+</html>

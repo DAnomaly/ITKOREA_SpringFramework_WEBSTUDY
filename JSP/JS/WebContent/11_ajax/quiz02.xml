@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel>
+	<title>Naver Open API - news :: '백신'</title>
+	<link>http://search.naver.com</link>
+	<description>Naver Search Result</description>
+	<lastBuildDate>2021-05-06</lastBuildDate>
+	<total>12345</total>
+	<item>
+		<title>코로나 <b>백신</b> 지재권 면제 지지</title>
+		<description>(코로나19) <b>백신</b>에 대한 지식재산권 면재를 지지한다고 밝혔다.</description>
+		<link>http://openapi.naver.com</link>
+		<pubDate>2021-05-06</pubDate>
+	</item>
+	<item>
+		<title>오늘부터 70~74세 AZ<b>백신</b> 접종 사전예약</title>
+		<description>정부 "상반기까지 60세 이상 80% 접종 참여 기대"...</description>
+		<link>http://openapi.naver.com</link>
+		<pubDate>2021-05-06</pubDate>
+	</item>
+</channel>
