@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>제이쿼리실습</title>
+	<script type="text/javascript" src="../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		// 페이지 로드 이벤트
+		$(function(){
+			// 1. textContent == text()
+			// 	 1) 객체.textContent
+			//	    객체.text()
+			// 	 2) 객체.textContent = '텍스트'
+			//	    객체.text('텍스트')
+			
+			// 2. innerHTML == html()
+			// 	 1) 객체.innerHTML
+			//	    객체.html()
+			// 	 2) 객체.innerHTML = '<b>텍스트</b>'
+			//	    객체.html('<b>텍스트</b>')
+			
+			// 3. style.CSS속성 == css()
+			//   1) 객체.style.color
+			//      객체.css('color');
+			//   2) 객체.style.color = 'red';
+			//      객체.css('color','red');
+			//   3) 객체.style.color = 'red';
+			//      객체.style.backgroundColor = 'white';
+			//      객체.css('color','red').css('background-color','white');
+			//      객체.css({'color':'red','background-color':'white'});
+			
+			console.log($('.menu').text());
+			console.log($('.menu').html());
+			$('.menu').css('color','red');
+			
+			$('#friday').text('오늘은 금요일 야식 먹자');
+			$('#saturday').html('<strong>내일은 토요일 놀러 가자</strong>');
+			$('#sunday').css('color','red').css('font-size','36px');
+			
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li class="menu"><a>카페</a></li>
+			<li class="menu"><a>메일</a></li>
+			<li class="menu"><a>뉴스</a></li>
+			<li class="menu"><a>지도</a></li>
+		</ul>
+	</div>
+	<div>
+		<p id="friday">오늘은 금요일</p>
+		<p id="saturday">내일은 토요일</p>
+		<p id="sunday">모레는 일요일</p>
+	</div>
+</body>
+</html>

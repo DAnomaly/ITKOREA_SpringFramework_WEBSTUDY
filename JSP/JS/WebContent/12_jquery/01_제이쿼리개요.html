@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>제이쿼리개요</title>
+	
+	<!-- 1. CDN으로 제이쿼리 라이브러리 포함하기 -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	
+	<!-- 2. 다운로드 받은 제이쿼리 라이브러리 포함하기 -->
+	<!-- <script src="../js/jquery-3.6.0.js.js"></script> -->
+	
+	<script>
+		/*
+			제이쿼리 선택자
+			
+			1. CSS선택자를 그대로 사용한다.
+			2. 제이쿼리 wrapper를 이용해서 작성한다. $()
+			3. 대표
+				1) 태그선택자 	$('div')
+				2) 아이디선택자 $('#id')
+				3) 클래스선택자 $('.class')
+				4) 변수			$(변수)
+		*/
+		
+		/*
+			페이지 로드 이벤트
+			
+			1. $(document).ready(function(){})
+			2. $(function(){})
+		
+		*/
+		
+		$(document).ready(function(){
+			alert(document.getElementById('hello').textContent);
+		});
+	
+	</script>
+</head>
+<body>
+	<h1 id="hello">안녕하세요</h1>
+</body>
+</html>

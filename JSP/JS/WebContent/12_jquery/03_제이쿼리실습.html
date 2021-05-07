@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>제이쿼리실습</title>
+	<script type="text/javascript" src="../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		// 페이지 로드 이벤트
+		$(document).ready(function(){
+			// 부모/자식/형제
+			const css = $('#css');
+			const ul = $('ul');
+			// 부모
+			console.log($(css).parent());
+			
+			// 자식
+			console.log($(ul).children().text());
+			
+			// 형제
+			console.log($(css).prev().text()); 	// 이전 형제
+			console.log($(css).next().text()); 	// 다음 형제
+			console.log($(css).siblings().text()); // 모든 형제
+			
+			// 실습
+			$(css).parent().css('list-style-type','none');
+			$(ul).children().css('color','red');
+			$(css).prev().css('background-color','yellow');
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>HTML</li>
+			<li id="css">CSS</li>
+			<li>JavaScript</li>
+			<li>JQuery</li>
+		</ul>
+	</div>
+</body>
+</html>

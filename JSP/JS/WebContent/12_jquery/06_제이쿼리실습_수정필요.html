@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>제이쿼리실습</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		/*
+			1) 객체.click(function(){})
+			2) 객체.on('click',function(){})
+			3) 객체.on({
+				'click':function(){
+				
+				},
+				'dblclick':function(){
+					
+				}
+			})
+			4) 객체.one('click',function(){}) : 한 번만 실행할 이벤트
+			5) 객체.delegate('하위요소','click',function(){}): 객체의 하위요소에
+			6) 객체.off() : 이벤트 등록 전으로 돌아감
+		*/
+		
+		// 페이지 로드 이벤트
+		$(document).ready(function(){
+			/*
+			$('#container').click(function(){
+				// 이벤트 객체
+				// $('#container') == $(this)
+				console.log('앗 따거');
+				$(this).off();
+			});
+			*/
+			
+			/*
+			$('#container').on('click',function() {
+				console.log('앗 따거');
+				$(this).off();
+			})
+			*/
+			
+			/*
+			var ul = document.getElementById('menu');
+			var li = document.createElement('li');
+			li.setAttribute('id','new_item');
+			li.textContent = '쇼핑';
+			ul.appendChild(li);
+			*/
+			/*
+			$('#new_item').click(function(){
+				console.log('신입이냐?');
+			});
+			*/
+			/*
+			$('#new_item').on('click',function(){
+				console.log('신입이냐?');
+			});
+			*/
+			
+			/*
+			$('#container').on({
+				click:function(){
+					console.log('앗');
+				},
+				dblclick:function(){
+					console.log('앗앗');
+				}
+			});
+			*/
+			
+			$('#container').one('click',function(){
+				console.log('앗');
+			});
+			
+			$('#menu').delegate('li','click',function(){
+				$(this).css('color','red');
+			});
+		});
+		
+		
+	</script>
+</head>
+<body>
+	<div id="container">
+		<ul id="menu">
+			<li>메일</li>
+			<li>카페</li>
+			<li>블로그</li>
+			<li>지식iN</li>
+		</ul>
+	</div>	
+</body>
+</html>

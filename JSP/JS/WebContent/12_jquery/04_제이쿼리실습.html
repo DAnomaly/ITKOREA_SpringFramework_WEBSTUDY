@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>제이쿼리실습</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script>
+		
+		// 속성 (attribute)
+		// 1. 객체.getAttribute('name')
+		//	  객체.attr('name')
+		// 2. 객체.setAttribute('name','user')
+		//    객체.attr('name','user')
+		// 3. 객체.removeAttr('name') : name 속성을 없앤다.
+		
+		// value 속성
+		// 1. 객체.value
+		//    객체.val()
+		// 2. 객체.value = 'myaccount'
+		//    객체.val('myaccount')
+	
+		// 페이지 로드 이벤트
+		$(function(){
+			// 실습
+			console.log($('input[type="text"]').attr('name'));
+			console.log($('input[type="password"]').val());
+			console.log($($('input[type="radio"]')[0]).val());
+			console.log($($('input[type="radio"]')[1]).val());
+			console.log($('input[type="radio"]:checked').val());
+			$($('input[type="radio"]')[0]).val('남자');
+			$($('input[type="radio"]')[1]).val('여자');
+		});
+		
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text" name="id" value="admin" placeholder="ID"><br>
+		<input type="password" name="pw" value="1234" placeholder="Password"><br>
+		<input type="radio" name="gender" value="male" checked>남
+		<input type="radio" name="gender" value="female">여
+	</form>
+</body>
+</html>
