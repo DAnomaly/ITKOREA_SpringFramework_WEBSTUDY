@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>제이쿼리유틸실습</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	
+		// 페이지 로드 이벤트
+		$(function(){
+			
+			const people = [
+				{name:'아만다',age:20,address:'서울'},
+				{name:'제시카',age:21,address:'파리'},
+				{name:'나탸샤',age:22,address:'홍콩'}
+			];
+			
+			// 테이블을 만들어서 body에 넣어보자.
+			$('<table>')
+				.appendTo('body')
+				.attr('border','1')
+				.append('<tbody id="content">');
+			
+			$.each(people,function(i,person){
+				const $tr = $('<tr>').appendTo('#content');
+				for ( var el in person) {
+					$('<td>').text(person[el]).appendTo($tr);
+				}
+			});
+			
+		});
+	
+	</script>
+</head>
+<body>
+
+</body>
+</html>

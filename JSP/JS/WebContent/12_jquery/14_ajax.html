@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ajax</title>
+	<script src="../js/jquery-3.6.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajax({
+				url: 'data2.txt',
+				dataType: 'text', 	// 받아 오는 데이터의 타입
+				type: 'get',		// 요청 방식
+				async: true, 		// 비동기 통신(디폴트이므로 생략 가능)
+				success: function(responseText){ // 통신에 성공하면 data에 받아온 데이터가 저장된다.
+					console.log(responseText);
+				},
+				error: function(e){ // 실패시
+					console.log(e);
+					console.log('data.txt에 내용을 가져오는 것에 대해 실패하였습니다');
+				}
+			})
+		});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

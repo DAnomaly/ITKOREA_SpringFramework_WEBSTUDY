@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>이벤트실습</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			var $form = $('form');
+			$form.on('submit',function(event){
+				event.preventDefault(); // 원래 동작 방지
+				
+				// $(this) == $form
+				const id = ($($(this).children()[0]).val());
+				const pw = $(this).children().eq(2).val();
+				
+				$('#result').text(id + ', ' + pw);
+				
+				return false;
+			});
+		});
+	
+	</script>
+</head>
+<body>
+	<form action="index.html">
+		<input type="text" id="id"><br>
+		<input type="password" id="pw"><br>
+		<button>전송</button>
+		
+		<div id="result"></div>
+	</form>
+</body>
+</html>

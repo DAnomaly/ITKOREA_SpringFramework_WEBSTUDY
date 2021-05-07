@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>제이쿼리유틸실습</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		// 쿠키 : cookie (웹 브라우저의 저장소)
+		// $.cookie()
+		
+		// console.log($.cookie());
+		$(function(){
+			console.log($.cookie('send'));
+			
+			$('form').on('submit',function(event){
+				if($.cookie('send')=='ok') {
+					alert('이미 전송했습니다.');
+					event.preventDefault;
+					return 
+				} else {				
+					$.cookie('send','ok'); // 쿠키이름이 send이고 쿠키값이 ok인 정보가 저장된다.
+				}
+			});
+
+			$('#delete_btn').on('click',function(){
+				$.removeCookie('send');
+			})
+			
+		});
+		
+		
+	</script>
+</head>
+<body>
+	<form>
+		<h3>전송할까요?</h3>
+		<label for="question_y"><input type="radio" name="question" value="y" id="question_y">예</label>
+		<label for="question_n"><input type="radio" name="question" value="n" id="question_n">아니요</label>
+		<br><br>
+		<button id="send_btn">전송하기</button>
+		<button type="button" id="delete_btn">전송내역삭제하기</button>
+	</form>
+</body>
+</html>

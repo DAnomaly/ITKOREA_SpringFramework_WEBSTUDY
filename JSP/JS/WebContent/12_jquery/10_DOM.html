@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		// 페이지 로드 이벤트
+		$(function(){
+			var $ul = $('#menu');
+			
+			// 생성
+			/*
+				var li = document.createElement('li');
+				li.textContent = '카페';
+			*/
+			var $li = $('<li>카페</li>');
+			
+			// 1. 부모요소.append(자식요소)
+			//    : 마지막 요소로 추가된다.
+			// $ul.append($li);
+			
+			// 2. 자식요소.appendTo(부모요소)
+			//    : 마지막 요소로 추가된다.
+			// $li.appendTo($ul);
+			
+			// 3. 부모요소.prepend(자식요소)
+			//    : 첫번째 요소로 추가된다.
+			// $ul.prepend($li);
+			
+			// 4. 자식요소.prependTo(부모요소)
+			//    : 첫번째 요소로 추가된다.
+			// $li.prependTo($ul);
+			
+			// 5. 형제요소.before(삽입요소)
+			//	  : 형제요소 전에 삽입요소가 추가된다.
+			// $($('li')[0]).before($li);
+			
+			// 6. 형제요소.after(삽입요소)
+			//    : 형제요소 뒤에 삽입요소가 추가된다.
+			$('li').eq(0).after($li);
+			
+			// 7. 객체.empty()
+			// 	  : 객체의 하위 요소를 비운다. 객체는 남는다.
+			// $ul.empty();
+			
+			// 8. 객체.remove()
+			//    : 객체를 지운다.
+			$ul.remove();
+			
+			
+		});
+	</script>
+</head>
+<body>
+	<ul id="menu">
+		<li>메일</li>
+	</ul>
+</body>
+</html>
